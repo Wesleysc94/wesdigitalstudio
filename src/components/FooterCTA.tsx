@@ -16,7 +16,7 @@ export default function FooterCTA() {
                 className="max-w-4xl mx-auto flex flex-col items-center text-center z-10 relative"
             >
                 <h2 className="text-3xl md:text-5xl font-serif text-slate-800 dark:text-white mb-6 leading-tight">
-                    O seu consultório merece uma presença digital <span className="italic text-teal dark:text-gold">à altura do seu trabalho.</span>
+                    O seu consultório merece uma presença digital <span className="italic text-teal dark:text-gold">à altura das suas especializações.</span>
                 </h2>
 
                 <p className="text-slate-600 dark:text-zinc-400 font-sans text-lg md:text-xl mb-10 font-light max-w-2xl">
@@ -28,11 +28,11 @@ export default function FooterCTA() {
                     className="group flex gap-3 items-center px-8 py-4 bg-teal dark:bg-gold text-white dark:text-dark font-sans font-bold text-sm tracking-widest uppercase rounded-full shadow-lg shadow-teal/20 dark:shadow-gold/10 hover:-translate-y-1 hover:shadow-2xl hover:shadow-teal/30 dark:hover:shadow-gold/20 transition-all duration-300"
                 >
                     <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                    Me chame no WhatsApp
+                    Falar com Especialista
                 </a>
 
                 <div className="mt-20 text-slate-500 dark:text-zinc-600 font-sans text-sm">
-                    &copy; {new Date().getFullYear()} Desenvolvido com excelência técnica e design high-end.
+                    &copy; {new Date().getFullYear()} Wes Digital Studio - Web Design for Health Premium
                 </div>
             </motion.div>
         </footer>

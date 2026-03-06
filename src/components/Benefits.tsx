@@ -1,4 +1,4 @@
-import { Zap, Smartphone, MessageCircle } from 'lucide-react';
+import { Zap, Smartphone, Settings } from 'lucide-react';
 import { motion, type Variants } from 'framer-motion';
 
 export default function Benefits() {
@@ -32,7 +32,7 @@ export default function Benefits() {
                 className="text-center mb-16"
             >
                 <h2 className="text-3xl md:text-5xl font-serif text-slate-800 dark:text-white leading-tight">
-                    Tecnologia focada na <span className="italic text-teal dark:text-gold">experiência do seu paciente.</span>
+                    Tecnologia silenciosa. <span className="italic text-teal dark:text-gold">Resultados reais.</span>
                 </h2>
             </motion.div>
 
@@ -48,9 +48,9 @@ export default function Benefits() {
                     <div className="w-14 h-14 rounded-2xl bg-teal/10 text-teal dark:bg-gold/10 dark:text-gold flex items-center justify-center">
                         <Zap className="w-7 h-7" />
                     </div>
-                    <h3 className="text-xl font-sans font-semibold text-slate-900 dark:text-zinc-50">Velocidade Extrema</h3>
+                    <h3 className="text-xl font-sans font-semibold text-slate-900 dark:text-zinc-50">Velocidade Extrema (Nota 90+)</h3>
                     <p className="text-slate-600 dark:text-zinc-400 font-light leading-relaxed">
-                        Sites otimizados que carregam instantaneamente. Não perca pacientes para a concorrência por causa de lentidão.
+                        Sites otimizados que carregam em menos de 2 segundos. Sem perda de pacientes impacientes.
                     </p>
                 </motion.div>
 
@@ -59,20 +59,20 @@ export default function Benefits() {
                     <div className="w-14 h-14 rounded-2xl bg-teal/10 text-teal dark:bg-gold/10 dark:text-gold flex items-center justify-center">
                         <Smartphone className="w-7 h-7" />
                     </div>
-                    <h3 className="text-xl font-sans font-semibold text-slate-900 dark:text-zinc-50">Design Mobile First</h3>
+                    <h3 className="text-xl font-sans font-semibold text-slate-900 dark:text-zinc-50">Mobile First</h3>
                     <p className="text-slate-600 dark:text-zinc-400 font-light leading-relaxed">
-                        Uma experiência perfeita na tela do celular, onde mais de 80% dos seus futuros pacientes farão o primeiro contato.
+                        Experiência perfeita no smartphone, onde 80% do seu tráfego qualificado fará o primeiro contato.
                     </p>
                 </motion.div>
 
                 {/* Card 3 */}
                 <motion.div variants={cardVariants} className="glass p-8 rounded-3xl flex flex-col items-start gap-4 hover:-translate-y-2 transition-transform duration-300">
                     <div className="w-14 h-14 rounded-2xl bg-teal/10 text-teal dark:bg-gold/10 dark:text-gold flex items-center justify-center">
-                        <MessageCircle className="w-7 h-7" />
+                        <Settings className="w-7 h-7" />
                     </div>
-                    <h3 className="text-xl font-sans font-semibold text-slate-900 dark:text-zinc-50">Conversão em WhatsApp</h3>
+                    <h3 className="text-xl font-sans font-semibold text-slate-900 dark:text-zinc-50">100% Done-For-You</h3>
                     <p className="text-slate-600 dark:text-zinc-400 font-light leading-relaxed">
-                        Botões flutuantes e chamadas estratégicas guiando o visitante direto para a sua equipe de agendamento.
+                        Você aprova a estética, nós cuidamos de todo o código, hospedagem e integração. Zero dor de cabeça para você e sua secretária.
                     </p>
                 </motion.div>
             </motion.div>

@@ -50,14 +50,14 @@ export default function Hero() {
                     variants={itemVariants}
                     className="text-4xl md:text-6xl lg:text-7xl font-serif text-slate-800 dark:text-white leading-tight md:leading-snug mb-6"
                 >
-                    Transformo a autoridade da sua clínica em <span className="text-teal dark:text-gold italic">agendamentos reais.</span>
+                    A autoridade da sua clínica não deve ficar apenas no consultório. <span className="text-teal dark:text-gold italic">Transformamos o seu digital em agendamentos reais.</span>
                 </motion.h1>
 
                 <motion.p
                     variants={itemVariants}
                     className="text-lg md:text-xl text-slate-600 dark:text-zinc-400 font-sans max-w-2xl mb-10 font-light leading-relaxed"
                 >
-                    Sites de alta performance e design premium, projetados exclusivamente para a área da saúde e estética.
+                    Design premium e alta performance técnica focados exclusivamente em escalar serviços de alto ticket na área da saúde.
                 </motion.p>
 
                 <motion.a

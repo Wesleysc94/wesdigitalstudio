@@ -44,14 +44,13 @@ export default function CaseStudy() {
                     className="flex flex-col items-start z-10 w-full"
                 >
                     <span className="text-gold dark:text-gold-light font-sans font-semibold tracking-wider uppercase text-sm mb-4">
-                        Projeto Odontologia Premium
+                        Projeto Destaque: Odontologia Premium
                     </span>
                     <h2 className="text-3xl md:text-5xl font-serif text-slate-900 dark:text-zinc-50 mb-6 leading-tight">
-                        Estudo de Caso:<br />
                         <span className="italic text-teal dark:text-gold">Aura Odonto Premium</span>
                     </h2>
                     <p className="text-slate-600 dark:text-zinc-400 font-sans text-lg mb-8 leading-relaxed font-light">
-                        Um layout desenvolvido para transmitir luxo, higiene e confiança. Focado em especialidades de alto ticket, como Lentes de Contato e Implantes, o projeto conta com navegação fluida, prova social e versões em Light e Dark Mode para máxima personalização.
+                        Um ecossistema digital desenvolvido para transmitir luxo, higiene e extrema confiança. Focado em especialidades como Lentes de Contato e Implantes. Arquitetura 'Mobile First' projetada para o polegar do paciente, guiando-o psicologicamente para o WhatsApp.
                     </p>
                     <a
                         href="https://aura-odonto-demo-site.vercel.app/"
@@ -59,7 +58,7 @@ export default function CaseStudy() {
                         rel="noopener noreferrer"
                         className="group flex gap-3 items-center px-8 py-4 border border-teal text-teal dark:border-gold dark:text-gold rounded-full font-sans font-medium hover:bg-teal hover:text-white dark:hover:bg-gold dark:hover:text-dark transition-all duration-300"
                     >
-                        Testar o Site ao Vivo
+                        Navegar na Demonstração (Live)
                         <ExternalLink className="w-5 h-5 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
                     </a>
                 </motion.div>
