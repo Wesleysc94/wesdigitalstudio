@@ -72,7 +72,7 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
 
                         {/* Container de Botões (Premium Cyan) */}
                         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8 md:mb-16 w-full sm:w-auto">
-                            <Button href="https://aura-odonto-demo-site.vercel.app/" target="_blank" rel="noopener noreferrer" variant="primary" className="w-full sm:w-[280px]">
+                            <Button href="#case-study" variant="primary" className="w-full sm:w-[280px]">
                                 Ver demonstração
                                 <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300" />
                             </Button>
