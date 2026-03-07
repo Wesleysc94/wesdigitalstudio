@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 export default function AboutStudio() {
     return (
         <section className="py-20 md:py-28 px-6 relative w-full overflow-visible flex flex-col items-center">
-            {/* Background elements */}
-            <div className="absolute top-0 right-0 w-[200px] h-[200px] md:w-[500px] md:h-[500px] bg-cyan-600 aura:bg-amber-600 ruby:bg-rose-700 dark:bg-cyan-500 aura:bg-amber-500 ruby:bg-rose-600 rounded-full blur-[60px] md:blur-[100px] opacity-10 md:opacity-30 -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+            {/* Background elements - Escondido no mobile para não atrapalhar leitura */}
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-600 aura:bg-amber-600 ruby:bg-rose-700 dark:bg-cyan-500 aura:bg-amber-500 ruby:bg-rose-600 rounded-full blur-[100px] opacity-30 -translate-y-1/2 translate-x-1/3 pointer-events-none hidden md:block" />
 
             <div className="max-w-5xl mx-auto z-10 relative flex flex-col md:flex-row gap-16 md:gap-24 items-center">
 
