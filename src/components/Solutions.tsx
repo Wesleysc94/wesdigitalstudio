@@ -13,9 +13,9 @@ export default function Solutions() {
     };
 
     return (
-        <section className="py-32 relative w-full z-10 overflow-hidden">
+        <section className="py-40 md:py-48 relative w-full z-10 overflow-visible">
             {/* Ambient Background Base to blend with previous sections */}
-            <div className="absolute inset-0 bg-transparent transition-colors duration-500" />
+            <div className="absolute inset-0 bg-transparent" />
 
             {/* Tech Grid Background (Subtle) com Fade no Topo e na Base */}
             <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:linear-gradient(to_bottom,transparent_0%,black_15%,black_85%,transparent_100%)] pointer-events-none" />
@@ -30,15 +30,15 @@ export default function Solutions() {
                     whileInView="visible"
                     viewport={{ once: true, margin: "-100px" }}
                     variants={{
-                        hidden: { opacity: 0, y: 20 },
-                        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+                        hidden: { opacity: 0, y: 30 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
                     }}
-                    className="text-center mb-20 relative z-10"
+                    className="text-center mb-32 relative z-10"
                 >
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-slate-800 dark:text-white leading-tight mb-8">
-                        Soluções digitais pensadas para <span className="italic text-cyan-600 dark:text-cyan-400 block mt-2">diferentes objetivos.</span>
+                    <h2 className="text-5xl md:text-7xl lg:text-[5.5rem] font-serif text-slate-900 dark:text-white leading-[1.05] tracking-tight mb-8">
+                        Soluções de alta <br />performance para <span className="italic text-cyan-600 dark:text-cyan-400 font-light block mt-4">diferentes objetivos.</span>
                     </h2>
-                    <p className="text-slate-600 dark:text-zinc-400 font-sans text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-slate-600 dark:text-zinc-400 font-sans text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed tracking-wide">
                         Ajudamos sua empresa a decolar na web combinando design premium com engenharia focada na conversão de leads.
                     </p>
                 </motion.div>

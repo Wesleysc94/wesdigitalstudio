@@ -2,19 +2,19 @@ import { motion } from 'framer-motion';
 
 export default function Positioning() {
     return (
-        <section className="py-24 px-6 relative w-full overflow-hidden flex flex-col items-center text-center">
+        <section className="py-32 md:py-48 px-6 relative w-full overflow-visible flex flex-col items-center text-center z-10">
             <div className="max-w-4xl mx-auto z-10 relative">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.6 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                    <span className="text-teal dark:text-gold font-sans font-semibold tracking-wider uppercase text-sm mb-4 block">
+                    <span className="text-cyan-600 dark:text-cyan-400 font-sans font-bold tracking-[0.2em] uppercase text-sm mb-6 block">
                         O Nosso Foco
                     </span>
-                    <h2 className="text-3xl md:text-5xl font-serif text-slate-800 dark:text-white mb-8 leading-tight">
-                        Especialistas em <span className="italic">presença digital</span> para negócios locais.
+                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif text-slate-900 dark:text-white mb-10 leading-[1.1] tracking-tight">
+                        Especialistas em <span className="italic font-light">presença digital</span> para estética premium.
                     </h2>
                 </motion.div>
 

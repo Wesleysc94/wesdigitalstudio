@@ -31,19 +31,19 @@ export default function WorkProcess() {
     ];
 
     return (
-        <section className="py-24 px-6 relative w-full overflow-hidden">
+        <section className="py-32 md:py-48 px-6 relative w-full overflow-visible z-10">
             <div className="max-w-6xl mx-auto z-10 relative">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.6 }}
-                    className="text-center mb-16"
+                    transition={{ duration: 0.8 }}
+                    className="text-center mb-24"
                 >
-                    <h2 className="text-3xl md:text-5xl font-serif text-slate-800 dark:text-white mb-6 leading-tight">
-                        Como <span className="italic text-teal dark:text-gold">funciona</span>
+                    <h2 className="text-5xl md:text-7xl lg:text-[5.5rem] font-serif text-slate-900 dark:text-white mb-8 leading-[1.05] tracking-tight">
+                        Como <span className="italic text-cyan-600 dark:text-cyan-400 font-light">funciona</span>
                     </h2>
-                    <p className="text-slate-600 dark:text-zinc-400 font-sans text-lg font-light max-w-2xl mx-auto">
+                    <p className="text-slate-600 dark:text-zinc-400 font-sans text-xl md:text-2xl font-light max-w-3xl mx-auto tracking-wide leading-relaxed">
                         Um processo desenhado para minimizar o seu esforço e maximizar o resultado da sua vitrine digital.
                     </p>
                 </motion.div>

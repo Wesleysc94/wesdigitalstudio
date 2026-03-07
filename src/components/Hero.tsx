@@ -1,4 +1,4 @@
-import { MessageCircle, ArrowRight, Check } from 'lucide-react';
+import { MessageCircle, ArrowRight } from 'lucide-react';
 import { motion, type Variants } from 'framer-motion';
 
 export default function Hero() {
@@ -17,12 +17,9 @@ export default function Hero() {
     };
 
     return (
-        <section className="relative min-h-[100vh] flex flex-col items-center justify-center px-6 overflow-hidden">
+        <section className="relative min-h-[110vh] flex flex-col items-center justify-center px-6 overflow-visible -mb-24 md:-mb-32 z-20">
 
-            {/* Grid Tecnológico */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)] pointer-events-none -z-10" />
-
-            {/* Iluminação suave em Azul/Ciano */}
+            {/* Iluminação suave em Azul/Ciano (Mantida no Hero apenas para dar boost no H1) */}
             <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: [0.4, 0.6, 0.4], scale: [1, 1.05, 1] }}
@@ -37,70 +34,71 @@ export default function Hero() {
                     initial="hidden"
                     animate="visible"
                 >
-                    {/* Coluna da Esquerda: Copywriting */}
-                    <div className="flex flex-col items-start text-left">
+                    {/* Coluna da Esquerda: Copywriting Hero Cinematográfico */}
+                    <div className="flex flex-col items-start text-left xl:pr-10 relative z-30">
                         <motion.h1
                             variants={itemVariants}
-                            className="text-4xl md:text-5xl lg:text-7xl font-serif text-slate-900 dark:text-white mb-6 tracking-tight leading-tight md:leading-[1.1]"
+                            className="text-5xl md:text-7xl lg:text-[5.5rem] xl:text-[6rem] font-serif text-slate-900 dark:text-white mb-8 tracking-tighter leading-[1.05]"
                         >
-                            Experiências digitais que transformam visitantes em <span className="text-cyan-600 dark:text-cyan-400 italic">clientes.</span>
+                            Interfaces que<br />transformam a<br />presença em <span className="text-cyan-600 dark:text-cyan-400 italic font-light">autoridade.</span>
                         </motion.h1>
 
                         <motion.p
                             variants={itemVariants}
-                            className="text-lg md:text-xl text-slate-600 dark:text-zinc-400 font-sans max-w-xl mb-12 font-light leading-relaxed"
+                            className="text-lg md:text-xl xl:text-2xl text-slate-600 dark:text-zinc-400 font-sans max-w-xl mb-14 font-light leading-relaxed tracking-wide"
                         >
-                            Websites e landing pages modernas criadas para empresas que desejam transmitir autoridade, gerar confiança e atrair novos contatos pela internet.
+                            O padrão ouro do web design para empresas premium. Projetos desenhados para alta conversão através de gatilhos visuais e engenharia de ponta.
                         </motion.p>
 
-                        {/* Container de Botões */}
-                        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 mb-16 w-full sm:w-auto">
+                        {/* Container de Botões (Overlap Shadows Premium) */}
+                        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-5 mb-16 w-full sm:w-auto">
                             <a
-                                href="#projetos"
-                                className="group flex gap-3 items-center justify-center px-8 py-4 bg-cyan-600 hover:bg-cyan-500 text-white font-sans font-bold text-sm tracking-widest uppercase rounded-full shadow-[0_0_20px_rgba(8,145,178,0.3)] hover:shadow-[0_0_30px_rgba(8,145,178,0.5)] transition-all duration-300 w-full sm:w-auto hover:-translate-y-1"
+                                href="#case-study"
+                                className="group relative flex gap-3 items-center justify-center px-10 py-5 bg-cyan-600 text-white font-sans font-bold text-sm tracking-[0.2em] uppercase rounded-full overflow-hidden transition-all duration-500 w-full sm:w-auto hover:-translate-y-2 shadow-[0_20px_40px_-15px_rgba(8,145,178,0.5)]"
                             >
-                                Ver demonstração
-                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                <span className="relative z-10 flex items-center gap-3">
+                                    Ver demonstração
+                                    <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+                                </span>
+                                <div className="absolute inset-0 bg-cyan-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 z-0" />
                             </a>
 
                             <a
                                 href="https://wa.me/5511999999999" target="_blank" rel="noreferrer"
-                                className="group flex gap-3 items-center justify-center px-8 py-4 border border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-black/20 backdrop-blur-sm text-slate-700 dark:text-slate-300 font-sans font-bold text-sm tracking-widest uppercase rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto"
+                                className="group flex gap-3 items-center justify-center px-10 py-5 border border-slate-300 dark:border-slate-800 bg-white/40 dark:bg-black/20 backdrop-blur-md text-slate-700 dark:text-slate-300 font-sans font-bold text-sm tracking-[0.2em] uppercase rounded-full hover:bg-white dark:hover:bg-zinc-900 hover:-translate-y-2 hover:shadow-xl transition-all duration-500 w-full sm:w-auto"
                             >
                                 Solicitar proposta
                                 <MessageCircle className="w-5 h-5" />
                             </a>
                         </motion.div>
-
-                        {/* Micro-prova social */}
-                        <motion.div variants={itemVariants} className="flex flex-col md:flex-row gap-4 md:gap-6 text-sm text-slate-500 dark:text-slate-400 font-sans mt-4">
-                            <div className="flex items-center gap-2">
-                                <Check className="w-4 h-4 text-cyan-500 dark:text-cyan-400 flex-shrink-0" />
-                                <span>Sites rápidos e modernos</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <Check className="w-4 h-4 text-cyan-500 dark:text-cyan-400 flex-shrink-0" />
-                                <span>Focados em conversão</span>
-                            </div>
-                        </motion.div>
                     </div>
 
-                    {/* Coluna da Direita: Mockup Premium Tecnológico */}
+                    {/* Coluna da Direita: Composição Autoral (Spatial Design Float) utilizando as imagens originais do projeto */}
                     <motion.div
                         variants={itemVariants}
-                        className="relative w-full h-full flex justify-center lg:justify-end items-center py-10 lg:py-0"
+                        className="relative w-full h-full flex justify-center items-center py-20 lg:py-0 pointer-events-none"
                     >
-                        {/* Prompt de geração de imagem: "premium digital studio website mockup displayed on modern laptop and smartphone, dark background with subtle blue lighting, ultra clean UI interface on screen, modern web design layout, futuristic tech aesthetic, high-end startup style, minimalistic composition, cinematic lighting, professional product presentation, 4k resolution" */}
-                        <div className="relative w-full max-w-lg lg:max-w-xl">
-                            {/* Efeito Glow atrás do Mockup */}
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-cyan-500/20 rounded-full blur-[80px] pointer-events-none" />
+                        <div className="relative w-full max-w-[600px] h-full min-h-[500px] lg:scale-110 xl:scale-125 xl:translate-x-10 translate-y-10 lg:translate-y-24 z-20">
 
+                            {/* Efeito Deep Glow Radial atrás da composição principal */}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-cyan-500/20 dark:bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
+
+                            {/* Main Screen: Imagem Principal Original */}
                             <motion.img
-                                animate={{ y: [0, -10, 0] }}
-                                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                                src="/mockups/hero_tech_mockup.png"
-                                alt="Premium Digital Studio Mockup"
-                                className="relative z-10 w-full object-contain drop-shadow-[0_20px_40px_rgba(8,145,178,0.2)] hover:scale-[1.03] transition-transform duration-700 ease-out"
+                                animate={{ y: [0, -15, 0] }}
+                                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+                                src="/mockups/IMG_3927.PNG"
+                                alt="Main Project Interface"
+                                className="absolute right-[5%] top-[10%] w-[85%] rounded-[2rem] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.3)] border-[4px] border-white/40 dark:border-white/10"
+                            />
+
+                            {/* Secondary Screen: Imagem Secundária Original sobreposta */}
+                            <motion.img
+                                animate={{ y: [0, -25, 0] }}
+                                transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                                src="/mockups/IMG_3941.PNG"
+                                alt="Mobile Project Interface"
+                                className="absolute left-[0%] bottom-[10%] w-[45%] rounded-[2rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] border-[4px] border-white/60 dark:border-white/20 z-30"
                             />
                         </div>
                     </motion.div>

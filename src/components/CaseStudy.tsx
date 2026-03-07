@@ -13,8 +13,8 @@ export default function CaseStudy() {
     };
 
     return (
-        <section id="case-study" className="py-24 px-6 relative max-w-7xl mx-auto overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <section id="case-study" className="py-32 md:py-48 px-6 relative max-w-screen-2xl mx-auto overflow-visible z-20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
                 {/* Coluna Esquerda: Textos (Scroll Reveal) */}
                 <motion.div
                     initial="hidden"
@@ -23,22 +23,22 @@ export default function CaseStudy() {
                     variants={textVariants}
                     className="flex flex-col items-start z-10 w-full"
                 >
-                    <span className="text-cyan-600 dark:text-cyan-400 font-sans font-semibold tracking-wider uppercase text-sm mb-4">
+                    <span className="text-cyan-600 dark:text-cyan-400 font-sans font-bold tracking-[0.2em] uppercase text-sm mb-6">
                         Projetos Demonstrativos
                     </span>
-                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif text-slate-900 dark:text-zinc-50 mb-8 leading-tight">
-                        <span className="italic">Aura Odonto</span>
+                    <h2 className="text-5xl md:text-[6rem] lg:text-[7.5rem] xl:text-[8rem] font-serif text-slate-900 dark:text-zinc-50 mb-10 leading-[0.9] tracking-tighter">
+                        <span className="italic font-light">Aura Odonto</span>
                     </h2>
-                    <p className="text-slate-600 dark:text-zinc-400 font-sans text-lg md:text-xl mb-10 leading-relaxed font-light">
+                    <p className="text-slate-600 dark:text-zinc-400 font-sans text-xl md:text-2xl mb-14 leading-relaxed font-light tracking-wide max-w-xl">
                         Demonstração de uma plataforma digital desenvolvida para clínicas odontológicas com foco em experiência do usuário, velocidade e máxima conversão de pacientes nas especializações de maior valor agregado.
                     </p>
                     <a
                         href="https://aura-odonto-demo-site.vercel.app/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group flex gap-3 items-center px-8 py-4 border border-cyan-600 text-cyan-700 dark:border-cyan-500 dark:text-cyan-400 rounded-full font-sans font-bold uppercase tracking-widest text-sm hover:bg-cyan-600 hover:text-white dark:hover:bg-cyan-500 dark:hover:text-dark transition-all duration-300"
+                        className="group flex gap-3 items-center px-10 py-5 border border-cyan-400 dark:border-cyan-500/50 text-cyan-700 dark:text-cyan-400 rounded-full font-sans font-bold uppercase tracking-[0.2em] text-sm hover:bg-cyan-600 hover:text-white dark:hover:bg-cyan-500 dark:hover:text-[#030712] transition-all duration-300 shadow-xl hover:shadow-[0_20px_40px_-15px_rgba(8,145,178,0.4)]"
                     >
-                        Ver projeto
+                        Investigar projeto
                         <ExternalLink className="w-5 h-5 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
                     </a>
                 </motion.div>
