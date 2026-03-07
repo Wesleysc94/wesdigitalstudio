@@ -13,6 +13,6 @@
 
 @layer utilities {
   .glass {
-    @apply bg-white/70 dark:bg-zinc-900/40 backdrop-blur-xl border border-white/40 dark:border-white/5 shadow-2xl shadow-teal/5 dark:shadow-gold/5 transition-all duration-500 hover:shadow-teal/20 dark:hover:shadow-gold/10 hover:border-teal/30 dark:hover:border-gold/30 hover:-translate-y-2;
+    @apply bg-white/70 dark:bg-zinc-900/40 backdrop-blur-xl border border-white/40 dark:border-white/5 shadow-2xl shadow-cyan-600/5 dark:shadow-cyan-500/5 transition-all duration-500 hover:shadow-cyan-600/20 dark:hover:shadow-cyan-500/10 hover:border-cyan-600/30 dark:hover:border-cyan-500/30 hover:-translate-y-2;
   }
 }

@@ -44,7 +44,7 @@ export default function CaseStudy() {
                         <span className="italic font-light">Aura Odonto</span>
                     </h2>
                     <p className="text-slate-600 dark:text-zinc-400 font-sans text-sm sm:text-base md:text-xl md:text-2xl mb-8 md:mb-14 leading-relaxed font-light tracking-wide max-w-xl">
-                        Demonstração de uma plataforma digital desenvolvida para clínicas odontológicas com foco em experiência do usuário, velocidade e máxima conversão de pacientes nas especializações de maior valor agregado.
+                        Design e desenvolvimento focado em transmitir autoridade odontológica e maximizar a captação de pacientes de alto ticket através de uma interface ágil.
                     </p>
                     <a
                         href="https://aura-odonto-demo-site.vercel.app/"
@@ -91,7 +91,7 @@ export default function CaseStudy() {
                                         <img
                                             src={img}
                                             alt={`Aura Odonto Premium Showcase ${idx + 1}`}
-                                            className="w-full h-full object-contain drop-shadow-2xl rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden"
+                                            className="w-full h-full object-contain drop-shadow-2xl"
                                         />
                                     </SwiperSlide>
                                 ))}
