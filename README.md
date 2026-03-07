@@ -56,8 +56,7 @@ To run this project on your local machine:
 
 Available for Lead Front-End and Full-Stack roles.
 
-*   **LinkedIn:** [Wesley Silva](#) *(Link coming soon)*
-*   **Workana:** [Wesley Silva](#) *(Link coming soon)*
+*   **Workana:** [Wesley Carvalho](https://www.workana.com/freelancer/a6545ec7d8aa1d83db959227a5fa29b4)
 
 ---
 <div align="center">
