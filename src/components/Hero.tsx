@@ -36,22 +36,28 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
                         {/* --- NOVO EMBLEMA W ANIMADO --- */}
                         <motion.div
                             variants={{
-                                hidden: { opacity: 0, scale: 0.8 },
-                                visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut" } }
+                                hidden: { opacity: 0, scale: 0.9, rotate: -15 },
+                                visible: { opacity: 1, scale: 1, rotate: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } }
                             }}
-                            className="w-32 h-32 md:w-48 md:h-48 mb-8 md:mb-12 flex-shrink-0 relative flex flex-col items-center justify-center mx-auto group cursor-default"
+                            className="w-36 h-36 md:w-[13.5rem] md:h-[13.5rem] mb-8 md:mb-12 flex-shrink-0 relative flex flex-col items-center justify-center mx-auto group cursor-default"
                         >
-                            {/* Luz Animada de Fundo Dinâmica (Conforme Tema) - Emanando de traz */}
-                            <div className="absolute -inset-6 md:-inset-10 rounded-full animate-pulseGlow bg-cyan-400/40 dark:bg-cyan-500/40 aura:bg-amber-500/50 ruby:bg-rose-600/50 blur-[30px] md:blur-[50px] z-0 transition-colors duration-500 pointer-events-none" />
+                            {/* Halo Radial Suave (Mistura Estética no Fundo) */}
+                            <div className="absolute -inset-10 md:-inset-16 rounded-full bg-cyan-400/20 dark:bg-cyan-500/10 aura:bg-amber-500/15 ruby:bg-rose-600/15 blur-[50px] md:blur-[80px] z-0 transition-colors duration-500 pointer-events-none opacity-80" />
 
-                            {/* Vidro do Emblema */}
-                            <div className="absolute inset-0 rounded-full border border-cyan-300/40 dark:border-white/10 aura:border-white/10 ruby:border-white/10 bg-gradient-to-br from-white/80 to-white/20 dark:from-white/10 dark:to-white/5 aura:from-black/40 aura:to-black/20 ruby:from-black/40 ruby:to-black/20 backdrop-blur-xl shadow-[0_0_40px_rgba(0,0,0,0.1)] dark:shadow-[inset_0_0_20px_rgba(255,255,255,0.05)] aura:shadow-[inset_0_0_20px_rgba(255,255,255,0.02)] ruby:shadow-[inset_0_0_20px_rgba(255,255,255,0.02)] z-10" />
+                            {/* Vidro do Emblema (Camada Base Suave, sem bordas fortes) */}
+                            <div className="absolute inset-0 rounded-full border border-cyan-200/20 dark:border-white/5 aura:border-white/5 ruby:border-white/5 bg-gradient-to-br from-white/60 to-white/10 dark:from-white/5 dark:to-transparent aura:from-amber-100/5 aura:to-transparent ruby:from-rose-100/5 ruby:to-transparent backdrop-blur-2xl shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.4)] aura:shadow-[0_20px_40px_-10px_rgba(245,158,11,0.1)] ruby:shadow-[0_20px_40px_-10px_rgba(225,29,72,0.1)] z-10 box-border" />
 
-                            {/* Anéis Internos Giratórios */}
-                            <div className="absolute inset-2 md:inset-3 rounded-full border border-cyan-400/30 dark:border-white/10 aura:border-amber-500/30 ruby:border-rose-500/30 border-dashed animate-[spin_30s_linear_infinite] z-20" />
+                            {/* Anel Externo Refinado (Profundidade sutil) */}
+                            <div className="absolute inset-[2px] md:inset-[3px] rounded-full border border-cyan-400/10 dark:border-white/10 aura:border-amber-500/20 ruby:border-rose-500/20 z-10 pointer-events-none" />
+
+                            {/* Anel Interno Tracejado Suave (Estático) */}
+                            <div className="absolute inset-3 md:inset-4 rounded-full border border-cyan-400/20 dark:border-white/10 aura:border-amber-500/20 ruby:border-rose-500/20 border-dashed opacity-50 z-20 pointer-events-none" />
+
+                            {/* Glow muito sutil interno para destacar o W */}
+                            <div className="absolute inset-0 rounded-full bg-cyan-100/10 dark:bg-white/5 aura:bg-amber-100/5 ruby:bg-rose-100/5 blur-md z-10 pointer-events-none" />
 
                             {/* A Letra W */}
-                            <span className="font-serif text-6xl md:text-8xl text-slate-900 dark:text-white aura:text-white ruby:text-white italic relative z-30 transition-transform duration-500 group-hover:scale-110 drop-shadow-md">
+                            <span className="font-serif text-[4.2rem] md:text-[6.5rem] text-slate-800 dark:text-zinc-100 aura:text-zinc-100 ruby:text-zinc-100 italic relative z-30 transition-transform duration-500 group-hover:scale-105 drop-shadow-sm font-light">
                                 W
                             </span>
                         </motion.div>
