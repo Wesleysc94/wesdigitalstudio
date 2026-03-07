@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export default function Positioning() {
     return (
-        <section className="py-32 md:py-48 px-6 relative w-full overflow-visible flex flex-col items-center text-center z-10">
+        <section className="py-20 md:py-28 px-6 relative w-full overflow-visible flex flex-col items-center text-center z-10">
             <div className="max-w-4xl mx-auto z-10 relative">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -10,7 +10,7 @@ export default function Positioning() {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                    <span className="text-zinc-500 dark:text-zinc-400 font-sans font-medium tracking-[0.2em] uppercase text-xs md:text-sm mb-6 block">
+                    <span className="text-cyan-600 dark:text-cyan-400 font-sans font-bold tracking-[0.2em] uppercase text-xs md:text-sm mb-6 block">
                         O Nosso Foco
                     </span>
                     <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif text-slate-900 dark:text-white mb-8 md:mb-10 leading-[1.15] md:leading-[1.1] tracking-tight text-balance">

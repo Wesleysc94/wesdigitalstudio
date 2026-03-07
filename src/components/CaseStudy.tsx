@@ -1,7 +1,7 @@
 import { ExternalLink } from 'lucide-react';
 import { motion, type Variants } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectFade } from 'swiper/modules';
+import { Autoplay, EffectFade, Navigation } from 'swiper/modules';
 // @ts-ignore
 import 'swiper/css';
 // @ts-ignore
@@ -27,7 +27,7 @@ export default function CaseStudy() {
     ];
 
     return (
-        <section id="case-study" className="py-32 md:py-48 px-6 relative max-w-screen-2xl mx-auto overflow-visible z-20">
+        <section id="case-study" className="py-20 md:py-28 px-6 relative max-w-screen-2xl mx-auto overflow-visible z-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
                 {/* Coluna Esquerda: Textos (Scroll Reveal) */}
                 <motion.div
@@ -37,7 +37,7 @@ export default function CaseStudy() {
                     variants={textVariants}
                     className="flex flex-col items-start z-10 w-full"
                 >
-                    <span className="text-zinc-500 dark:text-zinc-400 font-sans font-medium tracking-[0.2em] uppercase text-xs md:text-sm mb-6 block">
+                    <span className="text-cyan-600 dark:text-cyan-400 font-sans font-bold tracking-[0.2em] uppercase text-xs md:text-sm mb-6 block">
                         Projetos Demonstrativos
                     </span>
                     <h2 className="text-4xl sm:text-5xl md:text-[6rem] lg:text-[7.5rem] xl:text-[8rem] font-serif text-slate-900 dark:text-zinc-50 mb-6 md:mb-10 leading-[1] md:leading-[0.9] tracking-tighter text-balance">
@@ -50,7 +50,7 @@ export default function CaseStudy() {
                         href="https://aura-odonto-demo-site.vercel.app/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group flex gap-2 md:gap-3 items-center justify-center px-8 md:px-10 py-4 md:py-5 border border-slate-300 dark:border-zinc-700 bg-transparent text-slate-800 dark:text-zinc-300 rounded-full font-sans font-bold uppercase tracking-[0.2em] text-xs md:text-sm hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-[#030712] transition-all duration-300 shadow-xl hover:-translate-y-1 w-full sm:w-auto text-center"
+                        className="group flex gap-2 md:gap-3 items-center justify-center px-8 md:px-10 py-4 md:py-5 border border-cyan-400 dark:border-cyan-500/50 text-cyan-700 dark:text-cyan-400 rounded-full font-sans font-bold uppercase tracking-[0.2em] text-xs md:text-sm hover:bg-cyan-600 hover:text-white dark:hover:bg-cyan-500 dark:hover:text-[#030712] transition-all duration-300 shadow-xl hover:shadow-[0_20px_40px_-15px_rgba(8,145,178,0.4)] hover:-translate-y-1 w-full sm:w-auto text-center"
                     >
                         Investigar projeto
                         <ExternalLink className="w-4 h-4 md:w-5 md:h-5 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
@@ -60,26 +60,30 @@ export default function CaseStudy() {
                 {/* Coluna Direita: Imagens/Mockups */}
                 <div className="relative w-full h-full flex justify-center items-center py-10 lg:pl-10">
 
-                    {/* Efeito luminoso de fundo para o mockup */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-zinc-400/10 dark:bg-zinc-600/10 rounded-full blur-[100px] pointer-events-none" />
+                    {/* Efeito luminoso de fundo para a Imagem Direta */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] bg-cyan-400/10 dark:bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
 
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95, y: 30 }}
                         whileInView={{ opacity: 1, scale: 1, y: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="relative z-10 w-full group"
+                        className="relative z-10 w-full group flex flex-col items-center"
                     >
-                        <div className="relative rounded-3xl overflow-hidden border border-slate-200/50 dark:border-zinc-800/80 shadow-2xl group-hover:shadow-[0_30px_60px_rgba(161,161,170,0.15)] dark:group-hover:border-zinc-500/30 transition-all duration-700 ease-out transform group-hover:-translate-y-2 group-hover:scale-[1.02] bg-white dark:bg-[#0a0a0a] backdrop-blur-sm aspect-[4/3] flex items-center justify-center">
+                        <div className="relative w-full aspect-video flex items-center justify-center">
 
                             <Swiper
-                                modules={[Autoplay, EffectFade]}
+                                modules={[Autoplay, EffectFade, Navigation]}
                                 effect="fade"
                                 fadeEffect={{ crossFade: true }}
-                                speed={1500}
+                                speed={1000}
                                 autoplay={{ delay: 8000, disableOnInteraction: false }}
                                 loop={true}
                                 allowTouchMove={false}
+                                navigation={{
+                                    prevEl: '.swiper-button-prev-custom',
+                                    nextEl: '.swiper-button-next-custom',
+                                }}
                                 className="w-full h-full"
                             >
                                 {caseImages.map((img, idx) => (
@@ -87,17 +91,21 @@ export default function CaseStudy() {
                                         <img
                                             src={img}
                                             alt={`Aura Odonto Premium Showcase ${idx + 1}`}
-                                            className="w-full h-full object-contain p-4 md:p-8 drop-shadow-2xl"
+                                            className="w-full h-full object-contain drop-shadow-2xl"
                                         />
                                     </SwiperSlide>
                                 ))}
                             </Swiper>
+                        </div>
 
-                            {/* Overlay sutil com texto explicativo na base */}
-                            <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col items-start translate-y-4 group-hover:translate-y-0 z-20 pointer-events-none">
-                                <span className="text-white font-serif text-2xl mb-2">Aura Odonto Clínicas</span>
-                                <span className="text-zinc-300 font-sans text-xs md:text-sm font-light">Galeria de visualização de alta resolução (8s Auto-play).</span>
-                            </div>
+                        {/* Controles de Navegação Discretos */}
+                        <div className="flex gap-4 items-center justify-center mt-8">
+                            <button className="swiper-button-prev-custom group flex items-center justify-center w-12 h-12 rounded-full border border-slate-300 dark:border-zinc-700 bg-transparent text-slate-600 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-400 hover:border-cyan-500/50 transition-all duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:-translate-x-1 transition-transform"><path d="m15 18-6-6 6-6" /></svg>
+                            </button>
+                            <button className="swiper-button-next-custom group flex items-center justify-center w-12 h-12 rounded-full border border-slate-300 dark:border-zinc-700 bg-transparent text-slate-600 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-400 hover:border-cyan-500/50 transition-all duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform"><path d="m9 18 6-6-6-6" /></svg>
+                            </button>
                         </div>
                     </motion.div>
                 </div>
