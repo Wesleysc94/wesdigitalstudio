@@ -1,6 +1,7 @@
 import { MessageCircle, ArrowRight } from 'lucide-react';
 import { motion, type Variants } from 'framer-motion';
 import Button from './Button';
+import InstagramButton from './InstagramButton';
 
 export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
 
@@ -83,7 +84,7 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
                         </motion.p>
 
                         {/* Container de Botões (Premium Cyan) */}
-                        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8 md:mb-16 w-full sm:w-auto">
+                        <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6 md:mb-8 w-full sm:w-auto">
                             <Button href="#case-study" variant="primary" className="w-full sm:w-[280px]">
                                 Ver demonstração
                                 <ArrowRight className="w-5 h-5 md:w-6 md:h-6 shrink-0 group-hover:translate-x-1 transition-transform duration-300" />
@@ -93,6 +94,10 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
                                 <MessageCircle className="w-5 h-5 md:w-6 md:h-6 shrink-0 group-hover:scale-110 transition-transform duration-300" />
                                 Solicitar proposta
                             </Button>
+                        </motion.div>
+
+                        <motion.div variants={itemVariants} className="flex justify-center w-full mb-8 md:mb-16">
+                            <InstagramButton variant="footer" />
                         </motion.div>
 
                         {/* Imagem APENAS no Mobile, inserida após botões */}
