@@ -10,7 +10,7 @@ import FooterCTA from './components/FooterCTA';
 
 function App() {
   return (
-    <div className="relative w-full min-h-screen">
+    <div className="relative w-full min-h-screen bg-slate-50 dark:bg-[#0a0a0a] transition-colors duration-500 text-slate-900 dark:text-zinc-50">
       {/* Header Fixo Simples / Botão de Tema */}
       <header className="fixed top-0 left-0 w-full p-6 z-50 flex justify-end items-center pointer-events-none">
         <div className="glass rounded-full pointer-events-auto">

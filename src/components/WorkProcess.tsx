@@ -31,7 +31,7 @@ export default function WorkProcess() {
     ];
 
     return (
-        <section className="py-24 px-6 relative w-full overflow-hidden bg-slate-50/50 dark:bg-black/20">
+        <section className="py-24 px-6 relative w-full overflow-hidden">
             <div className="max-w-6xl mx-auto z-10 relative">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
