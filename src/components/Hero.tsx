@@ -1,8 +1,19 @@
 import { MessageCircle, ArrowRight } from 'lucide-react';
-import { motion, type Variants } from 'framer-motion';
+import { motion, type Variants, useMotionValue, useMotionTemplate } from 'framer-motion';
 import Button from './Button';
+import type { MouseEvent } from 'react';
 
 export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
+    // Interactive Spotlight Logic
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+
+    function handleMouseMove({ currentTarget, clientX, clientY }: MouseEvent) {
+        const { left, top } = currentTarget.getBoundingClientRect();
+        mouseX.set(clientX - left);
+        mouseY.set(clientY - top);
+    }
+
     // Variantes para animação em cascata (stagger)
     const containerVariants: Variants = {
         hidden: { opacity: 0 },
@@ -18,7 +29,24 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
     };
 
     return (
-        <section className="relative min-h-[95vh] md:min-h-[110vh] flex flex-col items-center justify-center px-6 overflow-visible pt-10 pb-20 md:-mb-32 z-20">
+        <section
+            onMouseMove={handleMouseMove}
+            className="relative min-h-[95vh] md:min-h-[110vh] flex flex-col items-center justify-center px-6 overflow-visible pt-10 pb-20 md:-mb-32 z-20 group"
+        >
+
+            {/* Spotlight Interativo acompanhando o mouse (Visível no Desktop) */}
+            <motion.div
+                className="pointer-events-none absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100 hidden md:block z-0"
+                style={{
+                    background: useMotionTemplate`
+                        radial-gradient(
+                            800px circle at ${mouseX}px ${mouseY}px,
+                            rgba(255,255,255,0.06),
+                            transparent 80%
+                        )
+                    `,
+                }}
+            />
 
             {/* Grade extremamente sutil (removido no modo dark para o aspecto black total Aura) */}
             <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] dark:bg-transparent bg-[size:24px_24px] animate-gridFlow pointer-events-none z-0" />

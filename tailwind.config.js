@@ -41,7 +41,7 @@ export default {
             animation: {
                 shine: 'shine 1.5s ease-in-out infinite',
                 pulseGlow: 'pulseGlow 3s ease-in-out infinite',
-                gridFlow: 'gridFlow 25s linear infinite'
+                gridFlow: 'gridFlow 3s linear infinite'
             }
         },
     },
