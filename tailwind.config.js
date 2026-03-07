@@ -30,6 +30,7 @@ export default {
     plugins: [
         plugin(function ({ addVariant }) {
             addVariant('aura', '.aura &');
+            addVariant('ruby', '.ruby &');
         })
     ],
 }
