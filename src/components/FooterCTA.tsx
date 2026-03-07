@@ -29,7 +29,7 @@ export default function FooterCTA({ onOpenModal }: { onOpenModal?: () => void })
                         variant="primary"
                         className="w-full sm:w-[300px]"
                     >
-                        <MessageCircle className="w-4 sm:w-5 h-4 sm:h-5 group-hover:scale-110 transition-transform" />
+                        <MessageCircle className="w-5 h-5 md:w-6 md:h-6 shrink-0 group-hover:scale-110 transition-transform duration-300" />
                         Falar no WhatsApp
                     </Button>
 
@@ -38,7 +38,7 @@ export default function FooterCTA({ onOpenModal }: { onOpenModal?: () => void })
                         variant="outline"
                         className="w-full sm:w-[300px]"
                     >
-                        <FileText className="w-4 sm:w-5 h-4 sm:h-5 text-cyan-600 aura:text-amber-500 ruby:text-rose-600 dark:text-cyan-400 aura:text-amber-400 ruby:text-rose-400" />
+                        <FileText className="w-5 h-5 md:w-6 md:h-6 shrink-0 group-hover:scale-110 transition-transform duration-300" />
                         Solicitar Proposta
                     </Button>
                 </div>

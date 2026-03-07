@@ -76,12 +76,12 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
                         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8 md:mb-16 w-full sm:w-auto">
                             <Button href="#case-study" variant="primary" className="w-full sm:w-[280px]">
                                 Ver demonstração
-                                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                                <ArrowRight className="w-5 h-5 md:w-6 md:h-6 shrink-0 group-hover:translate-x-1 transition-transform duration-300" />
                             </Button>
 
                             <Button onClick={onOpenModal} variant="outline" className="w-full sm:w-[280px]">
+                                <MessageCircle className="w-5 h-5 md:w-6 md:h-6 shrink-0 group-hover:scale-110 transition-transform duration-300" />
                                 Solicitar proposta
-                                <MessageCircle className="w-4 h-4 md:w-5 md:h-5 text-cyan-600 aura:text-amber-500 ruby:text-rose-600 dark:text-cyan-400 aura:text-amber-400 ruby:text-rose-400" />
                             </Button>
                         </motion.div>
 
