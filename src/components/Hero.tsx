@@ -35,9 +35,6 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
 
                         {/* --- EMBLEMA W PREMIUM (ESTÁTICO & SOFISTICADO) --- */}
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.9, rotate: -10 }}
-                            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                             className="w-36 h-36 md:w-[13.5rem] md:h-[13.5rem] mb-8 md:mb-12 flex-shrink-0 relative flex flex-col items-center justify-center mx-auto group cursor-default"
                         >
                             {/* Halo Radial Suave (Mistura Estética no Fundo) */}
@@ -49,8 +46,8 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
                             {/* Anel Externo Refinado (Profundidade sutil) */}
                             <div className="absolute inset-[2px] md:inset-[3px] rounded-full border border-cyan-400/10 dark:border-white/10 aura:border-amber-500/20 ruby:border-rose-500/20 z-10 pointer-events-none" />
 
-                            {/* Anel Interno Tracejado Suave (Estático) */}
-                            <div className="absolute inset-3 md:inset-4 rounded-full border border-cyan-400/20 dark:border-white/10 aura:border-amber-500/20 ruby:border-rose-500/20 border-dashed opacity-50 z-20 pointer-events-none" />
+                            {/* Anel Interno Tracejado Suave (Animação Loop Contínua) */}
+                            <div className="absolute inset-3 md:inset-4 rounded-full border border-cyan-400/20 dark:border-white/10 aura:border-amber-500/20 ruby:border-rose-500/20 border-dashed opacity-50 z-20 pointer-events-none animate-[spin_30s_linear_infinite]" />
 
                             {/* Glow muito sutil interno para destacar o W */}
                             <div className="absolute inset-0 rounded-full bg-cyan-100/10 dark:bg-white/5 aura:bg-amber-100/5 ruby:bg-rose-100/5 blur-md z-10 pointer-events-none" />
