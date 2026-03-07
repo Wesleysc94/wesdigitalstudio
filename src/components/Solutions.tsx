@@ -53,7 +53,7 @@ export default function Solutions() {
                     {/* Card 1: Website Institucional */}
                     <motion.div
                         variants={cardVariants}
-                        className="bg-white/90 dark:bg-zinc-900/80 aura:bg-[#0a0a0a]/90 ruby:bg-[#0a0a0a]/90 backdrop-blur-sm lg:backdrop-blur-md p-10 md:p-14 lg:p-16 rounded-[2.5rem] border border-slate-200/60 dark:border-white/10 aura:border-white/10 ruby:border-white/10 flex flex-col items-start gap-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_-5px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_10px_40px_-5px_rgba(0,0,0,0.3)] group cursor-default"
+                        className="bg-gradient-to-br from-white/60 to-white/10 dark:from-white/5 dark:to-transparent aura:from-amber-100/5 aura:to-transparent ruby:from-rose-100/5 ruby:to-transparent backdrop-blur-2xl p-10 md:p-14 lg:p-16 rounded-[2.5rem] border border-cyan-200/20 dark:border-white/5 aura:border-white/5 ruby:border-white/5 flex flex-col items-start gap-8 transition-all duration-500 hover:-translate-y-2 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.05)] dark:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)] aura:shadow-[0_20px_40px_-10px_rgba(245,158,11,0.05)] ruby:shadow-[0_20px_40px_-10px_rgba(225,29,72,0.05)] hover:shadow-[0_20px_40px_-5px_rgba(8,145,178,0.15)] dark:hover:shadow-[0_30px_50px_-10px_rgba(0,0,0,0.6)] group cursor-default box-border"
                     >
                         <div className="w-16 h-16 rounded-2xl bg-cyan-50 dark:bg-cyan-900/30 text-cyan-600 aura:text-amber-500 ruby:text-rose-600 dark:text-cyan-400 aura:text-amber-400 ruby:text-rose-400 flex items-center justify-center shadow-sm dark:shadow-none transition-transform duration-500 group-hover:scale-110">
                             <LayoutDashboard className="w-8 h-8 stroke-[1.5]" />
@@ -67,16 +67,16 @@ export default function Solutions() {
                         </div>
                     </motion.div>
 
-                    {/* Card 2: Landing Page Estratégica */}
+                    {/* Card 2: Landing Page Alta Conversão */}
                     <motion.div
                         variants={cardVariants}
-                        className="bg-white/90 dark:bg-zinc-900/80 aura:bg-[#0a0a0a]/90 ruby:bg-[#0a0a0a]/90 backdrop-blur-sm lg:backdrop-blur-md p-10 md:p-14 lg:p-16 rounded-[2.5rem] border border-slate-200/60 dark:border-white/10 aura:border-white/10 ruby:border-white/10 flex flex-col items-start gap-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_-5px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_10px_40px_-5px_rgba(0,0,0,0.3)] group cursor-default"
+                        className="bg-gradient-to-br from-white/60 to-white/10 dark:from-white/5 dark:to-transparent aura:from-amber-100/5 aura:to-transparent ruby:from-rose-100/5 ruby:to-transparent backdrop-blur-2xl p-10 md:p-14 lg:p-16 rounded-[2.5rem] border border-cyan-200/20 dark:border-white/5 aura:border-white/5 ruby:border-white/5 flex flex-col items-start gap-8 transition-all duration-500 hover:-translate-y-2 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.05)] dark:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)] aura:shadow-[0_20px_40px_-10px_rgba(245,158,11,0.05)] ruby:shadow-[0_20px_40px_-10px_rgba(225,29,72,0.05)] hover:shadow-[0_20px_40px_-5px_rgba(8,145,178,0.15)] dark:hover:shadow-[0_30px_50px_-10px_rgba(0,0,0,0.6)] group cursor-default box-border mt-0 md:mt-12"
                     >
                         <div className="w-16 h-16 rounded-2xl bg-cyan-50 dark:bg-cyan-900/30 text-cyan-600 aura:text-amber-500 ruby:text-rose-600 dark:text-cyan-400 aura:text-amber-400 ruby:text-rose-400 flex items-center justify-center shadow-sm dark:shadow-none transition-transform duration-500 group-hover:scale-110">
                             <Target className="w-8 h-8 stroke-[1.5]" />
                         </div>
                         <div className="space-y-5 mt-2 w-full">
-                            <h3 className="text-2xl md:text-3xl font-serif font-semibold text-slate-900 dark:text-white aura:text-white ruby:text-white tracking-tight">Landing Page Estratégica</h3>
+                            <h3 className="text-2xl md:text-3xl font-serif font-semibold text-slate-900 dark:text-white aura:text-white ruby:text-white tracking-tight">Landing Page Alta Conversão</h3>
                             <div className="h-[2px] w-16 bg-cyan-600 aura:bg-amber-600 ruby:bg-rose-700 group-hover:w-full transition-all duration-700 ease-in-out" />
                             <p className="text-slate-600 dark:text-zinc-400 aura:text-zinc-400 ruby:text-zinc-400 text-lg md:text-xl font-light leading-relaxed tracking-wide">
                                 Páginas focadas em campanhas, lançamentos ou captação de leads, desenvolvidas especificamente para maximizar conversões e direcionar o visitante para entrar em contato.
