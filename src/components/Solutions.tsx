@@ -4,16 +4,16 @@ import { motion, type Variants } from 'framer-motion';
 export default function Solutions() {
     const containerVariants: Variants = {
         hidden: { opacity: 0 },
-        visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
+        visible: { opacity: 1, transition: { staggerChildren: 0.2, delayChildren: 0.1 } }
     };
 
     const cardVariants: Variants = {
         hidden: { opacity: 0, y: 30 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
     };
 
     return (
-        <section className="py-20 md:py-28 relative w-full z-10 overflow-visible">
+        <section className="py-24 md:py-32 relative w-full z-10 overflow-visible">
             {/* Ambient Background Base to blend with previous sections */}
             <div className="absolute inset-0 bg-transparent" />
 
@@ -31,11 +31,11 @@ export default function Solutions() {
                     viewport={{ once: true, margin: "0px" }}
                     variants={{
                         hidden: { opacity: 0, y: 30 },
-                        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+                        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
                     }}
-                    className="text-center mb-32 relative z-10"
+                    className="text-center mb-24 md:mb-32 relative z-10"
                 >
-                    <h2 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl font-serif text-slate-900 dark:text-white aura:text-white ruby:text-white leading-[1.1] md:leading-[1.05] tracking-tight mb-8">
+                    <h2 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl font-serif text-slate-900 dark:text-white aura:text-white ruby:text-white leading-[1.15] md:leading-[1.1] tracking-tight mb-8">
                         Soluções de alta performance para <span className="italic text-cyan-600 aura:text-amber-500 ruby:text-rose-600 dark:text-cyan-400 aura:text-amber-400 ruby:text-rose-400 font-light block mt-4">diferentes objetivos.</span>
                     </h2>
                     <p className="text-slate-600 dark:text-zinc-400 aura:text-zinc-400 ruby:text-zinc-400 font-sans text-lg sm:text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed tracking-wide">
@@ -53,15 +53,15 @@ export default function Solutions() {
                     {/* Card 1: Website Institucional */}
                     <motion.div
                         variants={cardVariants}
-                        className="glass border border-slate-200/50 dark:border-zinc-800 aura:border-zinc-800 ruby:border-zinc-800/80 aura:border-zinc-800/80 ruby:border-zinc-800/80 p-10 md:p-14 rounded-[2.5rem] flex flex-col items-start gap-8 hover:-translate-y-4 hover:shadow-[0_0_40px_rgba(8,145,178,0.15)] dark:hover:shadow-[0_0_40px_rgba(8,145,178,0.2)] dark:hover:border-cyan-500 aura:hover:border-amber-500 ruby:hover:border-rose-500 aura:border-amber-500 ruby:border-rose-500 transition-all duration-700 ease-out group bg-white/50 dark:bg-black/40 aura:bg-black/40 ruby:bg-black/40 backdrop-blur-md"
+                        className="bg-white/80 dark:bg-zinc-900/60 aura:bg-[#0a0a0a]/80 ruby:bg-[#0a0a0a]/80 backdrop-blur-xl p-10 md:p-14 lg:p-16 rounded-[2.5rem] border border-slate-200/60 dark:border-white/10 aura:border-white/10 ruby:border-white/10 flex flex-col items-start gap-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_-5px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_10px_40px_-5px_rgba(0,0,0,0.3)] group cursor-default"
                     >
-                        <div className="w-20 h-20 rounded-3xl bg-cyan-50 dark:bg-cyan-900/20 text-cyan-600 aura:text-amber-500 ruby:text-rose-600 dark:text-cyan-400 aura:text-amber-400 ruby:text-rose-400 flex items-center justify-center group-hover:scale-110 group-hover:bg-cyan-100 dark:group-hover:bg-cyan-900/40 transition-all duration-500 ease-out shadow-sm dark:shadow-none">
-                            <LayoutDashboard className="w-10 h-10 stroke-[1.5]" />
+                        <div className="w-16 h-16 rounded-2xl bg-cyan-50 dark:bg-cyan-900/30 text-cyan-600 aura:text-amber-500 ruby:text-rose-600 dark:text-cyan-400 aura:text-amber-400 ruby:text-rose-400 flex items-center justify-center shadow-sm dark:shadow-none transition-transform duration-500 group-hover:scale-110">
+                            <LayoutDashboard className="w-8 h-8 stroke-[1.5]" />
                         </div>
                         <div className="space-y-5 mt-2 w-full">
                             <h3 className="text-2xl md:text-3xl font-serif font-semibold text-slate-900 dark:text-white aura:text-white ruby:text-white tracking-tight">Website Institucional</h3>
                             <div className="h-[2px] w-16 bg-cyan-600 aura:bg-amber-600 ruby:bg-rose-700 group-hover:w-full transition-all duration-700 ease-in-out" />
-                            <p className="text-slate-600 dark:text-zinc-400 aura:text-zinc-400 ruby:text-zinc-400 text-lg font-light leading-relaxed">
+                            <p className="text-slate-600 dark:text-zinc-400 aura:text-zinc-400 ruby:text-zinc-400 text-lg md:text-xl font-light leading-relaxed tracking-wide">
                                 Projetos completos para empresas que desejam construir uma presença digital sólida, transmitir autoridade e apresentar seus serviços de forma impecável e profissional.
                             </p>
                         </div>
@@ -70,15 +70,15 @@ export default function Solutions() {
                     {/* Card 2: Landing Page Estratégica */}
                     <motion.div
                         variants={cardVariants}
-                        className="glass border border-slate-200/50 dark:border-zinc-800 aura:border-zinc-800 ruby:border-zinc-800/80 aura:border-zinc-800/80 ruby:border-zinc-800/80 p-10 md:p-14 rounded-[2.5rem] flex flex-col items-start gap-8 hover:-translate-y-4 hover:shadow-[0_0_40px_rgba(8,145,178,0.15)] dark:hover:shadow-[0_0_40px_rgba(8,145,178,0.2)] dark:hover:border-cyan-500 aura:hover:border-amber-500 ruby:hover:border-rose-500 aura:border-amber-500 ruby:border-rose-500 transition-all duration-700 ease-out group bg-white/50 dark:bg-black/40 aura:bg-black/40 ruby:bg-black/40 backdrop-blur-md"
+                        className="bg-white/80 dark:bg-zinc-900/60 aura:bg-[#0a0a0a]/80 ruby:bg-[#0a0a0a]/80 backdrop-blur-xl p-10 md:p-14 lg:p-16 rounded-[2.5rem] border border-slate-200/60 dark:border-white/10 aura:border-white/10 ruby:border-white/10 flex flex-col items-start gap-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_-5px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_10px_40px_-5px_rgba(0,0,0,0.3)] group cursor-default"
                     >
-                        <div className="w-20 h-20 rounded-3xl bg-cyan-50 dark:bg-cyan-900/20 text-cyan-600 aura:text-amber-500 ruby:text-rose-600 dark:text-cyan-400 aura:text-amber-400 ruby:text-rose-400 flex items-center justify-center group-hover:scale-110 group-hover:bg-cyan-100 dark:group-hover:bg-cyan-900/40 transition-all duration-500 ease-out shadow-sm dark:shadow-none">
-                            <Target className="w-10 h-10 stroke-[1.5]" />
+                        <div className="w-16 h-16 rounded-2xl bg-cyan-50 dark:bg-cyan-900/30 text-cyan-600 aura:text-amber-500 ruby:text-rose-600 dark:text-cyan-400 aura:text-amber-400 ruby:text-rose-400 flex items-center justify-center shadow-sm dark:shadow-none transition-transform duration-500 group-hover:scale-110">
+                            <Target className="w-8 h-8 stroke-[1.5]" />
                         </div>
                         <div className="space-y-5 mt-2 w-full">
                             <h3 className="text-2xl md:text-3xl font-serif font-semibold text-slate-900 dark:text-white aura:text-white ruby:text-white tracking-tight">Landing Page Estratégica</h3>
                             <div className="h-[2px] w-16 bg-cyan-600 aura:bg-amber-600 ruby:bg-rose-700 group-hover:w-full transition-all duration-700 ease-in-out" />
-                            <p className="text-slate-600 dark:text-zinc-400 aura:text-zinc-400 ruby:text-zinc-400 text-lg font-light leading-relaxed">
+                            <p className="text-slate-600 dark:text-zinc-400 aura:text-zinc-400 ruby:text-zinc-400 text-lg md:text-xl font-light leading-relaxed tracking-wide">
                                 Páginas focadas em campanhas, lançamentos ou captação de leads, desenvolvidas especificamente para maximizar conversões e direcionar o visitante para entrar em contato.
                             </p>
                         </div>
