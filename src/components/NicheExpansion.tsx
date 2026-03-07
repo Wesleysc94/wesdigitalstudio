@@ -9,7 +9,7 @@ export default function NicheExpansion() {
  whileInView={{ opacity: 1, scale: 1 }}
  viewport={{ once: true, margin: "0px" }}
  transition={{ duration: 0.6 }}
- className="text-3xl md:text-5xl font-serif text-slate-800 dark:text-white mb-6 leading-tight"
+ className="text-3xl md:text-5xl font-serif text-slate-800 dark:text-white aura:text-white ruby:text-white mb-6 leading-tight"
  >
  Um design de alta conversão não é um custo. <span className="italic text-teal dark:text-gold block mt-2">É um ativo.</span>
  </motion.h2>
