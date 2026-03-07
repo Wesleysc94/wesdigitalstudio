@@ -5,7 +5,7 @@ export default function FooterCTA({ onOpenModal }: { onOpenModal?: () => void })
     return (
         <footer id="footer-cta" className="relative mt-10 py-20 px-6 overflow-hidden">
             {/* Background Section-Specific */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[80vw] h-[80vw] max-w-[600px] max-h-[600px] bg-cyan-600/5 dark:bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[80vw] h-[80vw] max-w-[600px] max-h-[600px] bg-cyan-600/5 aura:bg-[#FBBF24]/5 dark:bg-cyan-500 aura:bg-[#D4AF37]/10 rounded-full blur-[100px] pointer-events-none" />
 
             <motion.div
                 initial={{ opacity: 0, scale: 0.95, y: 30 }}
@@ -15,7 +15,7 @@ export default function FooterCTA({ onOpenModal }: { onOpenModal?: () => void })
                 className="max-w-4xl mx-auto flex flex-col items-center text-center z-10 relative"
             >
                 <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif text-slate-800 dark:text-white mb-6 md:mb-8 leading-tight ">
-                    Vamos transformar sua <span className="italic text-cyan-600 dark:text-cyan-400 block mt-2">presença digital.</span>
+                    Vamos transformar sua <span className="italic text-cyan-600 dark:text-cyan-400 aura:text-[#FBBF24] block mt-2">presença digital.</span>
                 </h2>
 
                 <p className="text-slate-600 dark:text-zinc-400 font-sans text-base sm:text-lg md:text-xl mb-10 md:mb-14 font-light max-w-2xl ">
@@ -24,8 +24,8 @@ export default function FooterCTA({ onOpenModal }: { onOpenModal?: () => void })
 
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 w-full sm:w-auto">
                     <a
-                        href="https://wa.me/5511930863826" target="_blank" rel="noreferrer"
-                        className="group flex gap-2 sm:gap-3 items-center justify-center px-6 sm:px-8 py-4 bg-cyan-600 dark:bg-cyan-500 text-white font-sans font-bold text-xs sm:text-sm tracking-widest uppercase rounded-full shadow-[0_10px_40px_-10px_rgba(8,145,178,0.5)] transition-all duration-300 hover:bg-cyan-700 hover:-translate-y-1 w-full sm:w-auto whitespace-nowrap"
+                        href={`https://wa.me/5511930863826?text=${encodeURIComponent("Olá Wes Digital! Acessei o site e gostaria de falar sobre um projeto para minha empresa.")}`} target="_blank" rel="noreferrer"
+                        className="group flex gap-2 sm:gap-3 items-center justify-center px-6 sm:px-8 py-4 bg-cyan-600 dark:bg-cyan-500 aura:bg-[#D4AF37] text-white font-sans font-bold text-xs sm:text-sm tracking-widest uppercase rounded-full shadow-[0_10px_40px_-10px_rgba(8,145,178,0.5)] aura:shadow-[0_10px_40px_-10px_rgba(251,191,36,0.3)] transition-all duration-300 hover:bg-cyan-700 aura:hover:bg-[#B8942F] aura:bg-[#B8942F] active:scale-95 w-full sm:w-auto whitespace-nowrap"
                     >
                         <MessageCircle className="w-4 sm:w-5 h-4 sm:h-5 group-hover:scale-110 transition-transform" />
                         Falar no WhatsApp
@@ -33,9 +33,9 @@ export default function FooterCTA({ onOpenModal }: { onOpenModal?: () => void })
 
                     <button
                         onClick={onOpenModal}
-                        className="group flex gap-2 sm:gap-3 items-center justify-center px-6 sm:px-8 py-4 border border-slate-300 dark:border-zinc-800 bg-transparent text-slate-700 dark:text-zinc-200 font-sans font-bold text-xs sm:text-sm tracking-widest uppercase rounded-full hover:bg-slate-100 dark:hover:bg-zinc-800 hover:border-cyan-500/30 hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto whitespace-nowrap"
+                        className="group flex gap-2 sm:gap-3 items-center justify-center px-6 sm:px-8 py-4 border border-slate-300 dark:border-zinc-800 bg-transparent text-slate-700 dark:text-zinc-200 font-sans font-bold text-xs sm:text-sm tracking-widest uppercase rounded-full hover:bg-slate-100 dark:hover:bg-zinc-800 hover:border-cyan-500/30 aura:border-[#FBBF24]/30 hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto whitespace-nowrap"
                     >
-                        <FileText className="w-4 sm:w-5 h-4 sm:h-5 text-cyan-600 dark:text-cyan-400" />
+                        <FileText className="w-4 sm:w-5 h-4 sm:h-5 text-cyan-600 dark:text-cyan-400 aura:text-[#FBBF24]" />
                         Solicitar Proposta
                     </button>
                 </div>

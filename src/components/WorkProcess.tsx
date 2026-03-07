@@ -41,7 +41,7 @@ export default function WorkProcess() {
                     className="text-center mb-24"
                 >
                     <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-serif text-slate-900 dark:text-white mb-6 md:mb-8 leading-[1.1] md:leading-[1.05] tracking-tight text-balance">
-                        Como <span className="italic text-cyan-600 dark:text-cyan-400 font-light">funciona</span>
+                        Como <span className="italic text-cyan-600 dark:text-cyan-400 aura:text-[#FBBF24] font-light">funciona</span>
                     </h2>
                     <p className="text-slate-600 dark:text-zinc-400 font-sans text-lg sm:text-xl md:text-2xl font-light max-w-3xl mx-auto tracking-wide leading-relaxed text-balance">
                         Um processo desenhado para minimizar o seu esforço e maximizar o resultado da sua vitrine digital.
@@ -60,10 +60,10 @@ export default function WorkProcess() {
 
                     {steps.map((step, index) => (
                         <motion.div key={index} variants={stepVariants} className="flex flex-col items-center text-center group">
-                            <div className="w-24 h-24 rounded-full bg-cyan-50 dark:bg-cyan-900/10 flex items-center justify-center mb-6 group-hover:-translate-y-2 transition-transform duration-300 border border-cyan-200/50 dark:border-cyan-800/50 text-cyan-600 dark:text-cyan-400 group-hover:bg-cyan-100 dark:group-hover:bg-cyan-900/30">
+                            <div className="w-24 h-24 rounded-full bg-cyan-50 dark:bg-cyan-900/10 flex items-center justify-center mb-6 group-hover:-translate-y-2 transition-transform duration-300 border border-cyan-200/50 dark:border-cyan-800/50 text-cyan-600 dark:text-cyan-400 aura:text-[#FBBF24] group-hover:bg-cyan-100 dark:group-hover:bg-cyan-900/30">
                                 <step.icon className="w-10 h-10" />
                             </div>
-                            <h3 className="text-xl font-sans font-semibold text-slate-900 dark:text-zinc-50 mb-4">{step.title}</h3>
+                            <h3 className="text-xl font-sans font-semibold text-slate-900 dark:text-zinc-50 aura:text-[#F8FAFC] mb-4">{step.title}</h3>
                             <p className="text-slate-600 dark:text-zinc-400 font-light leading-relaxed">{step.desc}</p>
                         </motion.div>
                     ))}

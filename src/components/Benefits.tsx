@@ -42,7 +42,7 @@ export default function Services() {
                     <div className="w-14 h-14 rounded-2xl bg-teal/10 text-teal dark:bg-gold/10 dark:text-gold flex items-center justify-center">
                         <LayoutTemplate className="w-7 h-7" />
                     </div>
-                    <h3 className="text-xl font-sans font-semibold text-slate-900 dark:text-zinc-50">Website Premium</h3>
+                    <h3 className="text-xl font-sans font-semibold text-slate-900 dark:text-zinc-50 aura:text-[#F8FAFC]">Website Premium</h3>
                     <p className="text-slate-600 dark:text-zinc-400 font-light leading-relaxed">
                         Sites modernos, responsivos e visualmente profissionais projetados para valorizar a marca da sua empresa.
                     </p>
@@ -53,7 +53,7 @@ export default function Services() {
                     <div className="w-14 h-14 rounded-2xl bg-teal/10 text-teal dark:bg-gold/10 dark:text-gold flex items-center justify-center">
                         <Zap className="w-7 h-7" />
                     </div>
-                    <h3 className="text-xl font-sans font-semibold text-slate-900 dark:text-zinc-50">Performance</h3>
+                    <h3 className="text-xl font-sans font-semibold text-slate-900 dark:text-zinc-50 aura:text-[#F8FAFC]">Performance</h3>
                     <p className="text-slate-600 dark:text-zinc-400 font-light leading-relaxed">
                         Sites extremamente rápidos, hospedados em infraestrutura moderna (Edge Networks) e otimizados para qualquer dispositivo móvel.
                     </p>
@@ -64,7 +64,7 @@ export default function Services() {
                     <div className="w-14 h-14 rounded-2xl bg-teal/10 text-teal dark:bg-gold/10 dark:text-gold flex items-center justify-center">
                         <MousePointerClick className="w-7 h-7" />
                     </div>
-                    <h3 className="text-xl font-sans font-semibold text-slate-900 dark:text-zinc-50">Conversão de Leads</h3>
+                    <h3 className="text-xl font-sans font-semibold text-slate-900 dark:text-zinc-50 aura:text-[#F8FAFC]">Conversão de Leads</h3>
                     <p className="text-slate-600 dark:text-zinc-400 font-light leading-relaxed">
                         Estrutura pensada e validada para facilitar o contato e gerar constantemente novos contatos e orçamentos para sua equipe comercial.
                     </p>

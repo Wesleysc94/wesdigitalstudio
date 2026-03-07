@@ -10,7 +10,7 @@ export default function Positioning() {
                     viewport={{ once: true, margin: "0px" }}
                     transition={{ duration: 0.5, ease: "easeOut" }}
                 >
-                    <span className="text-cyan-600 dark:text-cyan-400 font-sans font-bold tracking-[0.2em] uppercase text-xs md:text-sm mb-6 block">
+                    <span className="text-cyan-600 dark:text-cyan-400 aura:text-[#FBBF24] font-sans font-bold tracking-[0.2em] uppercase text-xs md:text-sm mb-6 block">
                         O Nosso Foco
                     </span>
                     <h2 className="text-[2rem] sm:text-4xl md:text-5xl lg:text-7xl font-serif text-slate-900 dark:text-white mb-8 md:mb-10 leading-[1.15] md:leading-[1.1] tracking-tight">

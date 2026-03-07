@@ -35,7 +35,7 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
                             variants={itemVariants}
                             className="text-[2.5rem] sm:text-5xl md:text-7xl lg:text-[5.5rem] xl:text-[6rem] font-serif text-slate-900 dark:text-white mb-6 md:mb-8 tracking-tighter leading-[1.05]"
                         >
-                            Interfaces que transformam presença em <span className="text-cyan-600 dark:text-cyan-400 italic font-light whitespace-normal">autoridade.</span>
+                            Interfaces que transformam presença em <span className="text-cyan-600 dark:text-cyan-400 aura:text-[#FBBF24] italic font-light whitespace-normal">autoridade.</span>
                         </motion.h1>
 
                         <motion.p
@@ -47,7 +47,7 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
 
                         {/* Imagem APENAS no Mobile, inserida entre o texto e os botões */}
                         <motion.div variants={itemVariants} className="flex lg:hidden relative w-full justify-center items-center py-6 pointer-events-none mb-8">
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-cyan-400/10 dark:bg-cyan-500/10 rounded-full blur-[60px]" />
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-cyan-400/10 aura:bg-[#FBBF24]/5 dark:bg-cyan-500 aura:bg-[#D4AF37]/10 rounded-full blur-[60px]" />
                             <img src="/mockups/dupla versao mobile.PNG" alt="Mobile UI" className="relative z-30 w-[85%] max-w-[320px] rounded-[2rem] shadow-2xl border-[3px] border-white/40 dark:border-white/10" />
                         </motion.div>
 
@@ -55,21 +55,21 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
                         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 mb-16 w-full sm:w-auto">
                             <a
                                 href="#case-study"
-                                className="group relative flex gap-3 items-center justify-center px-8 md:px-10 py-4 md:py-5 bg-cyan-600 dark:bg-cyan-500 text-white font-sans font-bold text-xs md:text-sm tracking-[0.2em] uppercase rounded-full overflow-hidden transition-all duration-500 w-full sm:w-auto hover:-translate-y-2 shadow-[0_10px_40px_-10px_rgba(8,145,178,0.5)]"
+                                className="group relative flex gap-3 items-center justify-center px-8 md:px-10 py-4 md:py-5 bg-cyan-600 dark:bg-cyan-500 aura:bg-[#D4AF37] text-white font-sans font-bold text-xs md:text-sm tracking-[0.2em] uppercase rounded-full overflow-hidden transition-all duration-500 w-full sm:w-auto hover:-translate-y-2 shadow-[0_10px_40px_-10px_rgba(8,145,178,0.5)] aura:shadow-[0_10px_40px_-10px_rgba(251,191,36,0.3)]"
                             >
                                 <span className="relative z-10 flex items-center gap-2 md:gap-3 whitespace-nowrap">
                                     Ver demonstração
                                     <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300" />
                                 </span>
-                                <div className="absolute inset-0 bg-cyan-700 dark:bg-cyan-600 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 z-0" />
+                                <div className="absolute inset-0 bg-cyan-700 aura:bg-[#B8942F] dark:bg-cyan-600 aura:bg-[#B8942F] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 z-0" />
                             </a>
 
                             <button
                                 onClick={onOpenModal}
-                                className="group flex gap-2 md:gap-3 items-center justify-center px-8 md:px-10 py-4 md:py-5 border border-slate-300 dark:border-zinc-800 bg-transparent text-slate-700 dark:text-zinc-200 font-sans font-bold text-xs md:text-sm tracking-[0.2em] uppercase rounded-full hover:bg-slate-100 dark:hover:bg-zinc-800 hover:border-cyan-500/30 hover:-translate-y-1 transition-all duration-500 w-full sm:w-auto whitespace-nowrap"
+                                className="group flex gap-2 md:gap-3 items-center justify-center px-8 md:px-10 py-4 md:py-5 border border-slate-300 dark:border-zinc-800 bg-transparent text-slate-700 dark:text-zinc-200 font-sans font-bold text-xs md:text-sm tracking-[0.2em] uppercase rounded-full hover:bg-slate-100 dark:hover:bg-zinc-800 hover:border-cyan-500/30 aura:border-[#FBBF24]/30 hover:-translate-y-1 transition-all duration-500 w-full sm:w-auto whitespace-nowrap"
                             >
                                 Solicitar proposta
-                                <MessageCircle className="w-4 h-4 md:w-5 md:h-5 text-cyan-600 dark:text-cyan-400" />
+                                <MessageCircle className="w-4 h-4 md:w-5 md:h-5 text-cyan-600 dark:text-cyan-400 aura:text-[#FBBF24]" />
                             </button>
                         </motion.div>
                     </div>
@@ -82,7 +82,7 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
                         <div className="relative w-full max-w-[500px] h-full min-h-[500px] lg:scale-125 xl:scale-[1.35] xl:translate-x-10 lg:-translate-y-8 xl:-translate-y-12 z-20 flex justify-center items-center">
 
                             {/* Efeito Deep Glow Radial atrás do Mockup */}
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-cyan-400/10 dark:bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-cyan-400/10 aura:bg-[#FBBF24]/5 dark:bg-cyan-500 aura:bg-[#D4AF37]/10 rounded-full blur-[100px] pointer-events-none" />
 
                             {/* Main Screen: Single Imagem Original (Conforme pedido) */}
                             <motion.img

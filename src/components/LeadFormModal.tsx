@@ -21,30 +21,58 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
         const projectDetails = formData.get('details') as string;
         const budget = formData.get('budget') as string;
 
-        // Simulating email send or using a service like Formspree / Web3Forms.
-        // For actual production email delivery without a server, Web3Forms is highly recommended.
-        // await fetch('https://api.web3forms.com/submit', { ... });
+        // Web3Forms Integration
+        formData.append("access_key", "64c37e83-2114-42e1-9d47-d0d014856288");
+        formData.append("subject", `Novo Briefing: ${name}`);
+        formData.append("from_name", "Wes Digital (Site)");
 
-        setTimeout(() => {
-            // After simulating sending the email to the backend, we also redirect them to your WhatsApp if they prefer, or just show success.
-            const wppMessage = `Olá Wes Digital! Meu nome é ${name}. Finalizei o preenchimento do formulário no site.
+        // Ensure format is friendly in email body
+        formData.append("message", `
+NOVO PROJETO - WES DIGITAL
+----------------------------------------
+Nome/Empresa: ${name}
+E-mail: ${email}
+WhatsApp: ${phone || 'Não informado'}
+Budget Estimado: ${budget}
+
+Detalhes do Projeto:
+${projectDetails}
+----------------------------------------
+        `);
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                const wppMessage = `Olá Wes Digital! Meu nome é ${name}. Finalizei o preenchimento do formulário no site.
 Email para retorno: ${email}
 Telefone registrado: ${phone || 'Não informado'}
 
 Gostaria de falar sobre o projeto (Orçamento: ${budget}). 
 Detalhes: ${projectDetails}`;
-            const encodedWpp = encodeURIComponent(wppMessage);
 
-            setStatus('success');
+                const encodedWpp = encodeURIComponent(wppMessage);
+                setStatus('success');
 
-            // Redirect to WhatsApp with the briefing summary in 2s
-            setTimeout(() => {
-                window.open(`https://wa.me/5511930863826?text=${encodedWpp}`, '_blank');
-                onClose();
-                setStatus('idle');
-            }, 2000);
-
-        }, 1500);
+                // Redirect to WhatsApp with the briefing summary in 2.5s
+                setTimeout(() => {
+                    window.open(`https://wa.me/5511930863826?text=${encodedWpp}`, '_blank');
+                    onClose();
+                    setStatus('idle');
+                }, 2500);
+            } else {
+                console.error("Error from Web3Forms", data);
+                setStatus('error');
+            }
+        } catch (error) {
+            console.error("Network error submitting to Web3Forms", error);
+            setStatus('error');
+        }
     };
 
     return (
@@ -65,17 +93,17 @@ Detalhes: ${projectDetails}`;
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white dark:bg-[#0a0a0a] rounded-3xl shadow-2xl border border-slate-200 dark:border-white/10 z-[101] p-6 md:p-10 hide-scrollbar"
+                        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white dark:bg-[#0a0a0a] aura:bg-[#09090B] rounded-3xl shadow-2xl border border-slate-200 dark:border-white/10 z-[101] p-6 md:p-10 hide-scrollbar"
                     >
                         <button
                             onClick={onClose}
-                            className="absolute top-6 right-6 p-2 rounded-full bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-zinc-400 hover:bg-slate-200 dark:hover:bg-white/10 hover:text-slate-800 dark:hover:text-white transition-colors"
+                            className="absolute top-6 right-6 p-2 rounded-full bg-slate-100 dark:bg-white/5 aura:bg-[#FBBF24]/5 text-slate-500 dark:text-zinc-400 hover:bg-slate-200 dark:hover:bg-white/10 hover:text-slate-800 dark:hover:text-white transition-colors"
                         >
                             <X className="w-5 h-5" />
                         </button>
 
                         <div className="mb-8">
-                            <span className="text-cyan-600 dark:text-cyan-400 font-sans font-bold tracking-[0.2em] uppercase text-xs mb-3 block">
+                            <span className="text-cyan-600 dark:text-cyan-400 aura:text-[#FBBF24] font-sans font-bold tracking-[0.2em] uppercase text-xs mb-3 block">
                                 Iniciar Projeto
                             </span>
                             <h2 className="text-3xl md:text-4xl font-serif text-slate-900 dark:text-white leading-tight mb-3">
@@ -94,10 +122,29 @@ Detalhes: ${projectDetails}`;
                                 <div className="w-20 h-20 bg-green-50 dark:bg-green-900/30 text-green-500 dark:text-green-400 rounded-full flex items-center justify-center mb-6">
                                     <Send className="w-10 h-10" />
                                 </div>
-                                <h3 className="text-2xl font-serif text-slate-900 dark:text-white mb-2">Briefing Enviado!</h3>
+                                <h3 className="text-2xl font-serif text-slate-900 dark:text-white mb-2">Briefing Enviado com Sucesso!</h3>
                                 <p className="text-slate-600 dark:text-zinc-400">
-                                    Cópia enviada para o e-mail da Wes Digital. Redirecionando você para o WhatsApp...
+                                    E-mail recebido pela nossa equipe. Abrindo aba do WhatsApp para agilizarmos...
                                 </p>
+                            </motion.div>
+                        ) : status === 'error' ? (
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
+                                className="flex flex-col items-center justify-center py-10 text-center"
+                            >
+                                <div className="w-20 h-20 bg-red-50 dark:bg-red-900/30 text-red-500 dark:text-red-400 rounded-full flex items-center justify-center mb-6">
+                                    <X className="w-10 h-10" />
+                                </div>
+                                <h3 className="text-2xl font-serif text-slate-900 dark:text-white mb-2">Ops, algo deu errado.</h3>
+                                <p className="text-slate-600 dark:text-zinc-400 mb-6">
+                                    Não foi possível enviar o e-mail no momento. Por favor, tente pelo Wpp.
+                                </p>
+                                <button
+                                    onClick={() => setStatus('idle')}
+                                    className="px-6 py-2 bg-slate-200 dark:bg-white/10 hover:bg-slate-300 dark:hover:bg-white/20 text-slate-800 dark:text-white rounded-lg transition-colors"
+                                >
+                                    Tentar Novamente
+                                </button>
                             </motion.div>
                         ) : (
                             <form onSubmit={handleSubmit} className="space-y-6">
@@ -107,7 +154,7 @@ Detalhes: ${projectDetails}`;
                                         <input
                                             type="text" id="name" name="name" required
                                             placeholder="Ex: João - Clinica X"
-                                            className="w-full px-4 py-3 bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 outline-none transition-all text-slate-900 dark:text-white"
+                                            className="w-full px-4 py-3 bg-slate-50 dark:bg-white/5 aura:bg-[#FBBF24]/5 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 aura:border-[#FBBF24] outline-none transition-all text-slate-900 dark:text-white"
                                         />
                                     </div>
                                     <div className="space-y-2">
@@ -115,7 +162,7 @@ Detalhes: ${projectDetails}`;
                                         <input
                                             type="email" id="email" name="email" required
                                             placeholder="joao@empresa.com"
-                                            className="w-full px-4 py-3 bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 outline-none transition-all text-slate-900 dark:text-white"
+                                            className="w-full px-4 py-3 bg-slate-50 dark:bg-white/5 aura:bg-[#FBBF24]/5 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 aura:border-[#FBBF24] outline-none transition-all text-slate-900 dark:text-white"
                                         />
                                     </div>
                                 </div>
@@ -126,14 +173,14 @@ Detalhes: ${projectDetails}`;
                                         <input
                                             type="tel" id="phone" name="phone"
                                             placeholder="(11) 90000-0000"
-                                            className="w-full px-4 py-3 bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 outline-none transition-all text-slate-900 dark:text-white"
+                                            className="w-full px-4 py-3 bg-slate-50 dark:bg-white/5 aura:bg-[#FBBF24]/5 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 aura:border-[#FBBF24] outline-none transition-all text-slate-900 dark:text-white"
                                         />
                                     </div>
                                     <div className="space-y-2">
                                         <label htmlFor="budget" className="text-sm font-sans font-medium text-slate-700 dark:text-zinc-300">Estimativa de Investimento</label>
                                         <select
                                             id="budget" name="budget" required
-                                            className="w-full px-4 py-3 bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 outline-none transition-all text-slate-900 dark:text-white appearance-none"
+                                            className="w-full px-4 py-3 bg-slate-50 dark:bg-white/5 aura:bg-[#FBBF24]/5 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 aura:border-[#FBBF24] outline-none transition-all text-slate-900 dark:text-white appearance-none"
                                         >
                                             <option value="" disabled selected>Selecione um budget base</option>
                                             <option value="Landing Page (- VIP)">Landing Page Estratégica</option>
@@ -149,14 +196,14 @@ Detalhes: ${projectDetails}`;
                                     <textarea
                                         id="details" name="details" required rows={4}
                                         placeholder="Nos descreva seus principais problemas hoje (design genérico, falta de clientes, tecnologia lenta) e o que você visualiza como ideal..."
-                                        className="w-full px-4 py-3 bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 outline-none transition-all text-slate-900 dark:text-white resize-none"
+                                        className="w-full px-4 py-3 bg-slate-50 dark:bg-white/5 aura:bg-[#FBBF24]/5 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 aura:border-[#FBBF24] outline-none transition-all text-slate-900 dark:text-white resize-none"
                                     />
                                 </div>
 
                                 <button
                                     type="submit"
                                     disabled={status === 'loading'}
-                                    className="w-full group flex gap-3 items-center justify-center px-8 py-4 bg-cyan-600 dark:bg-cyan-500 text-white font-sans font-bold tracking-[0.2em] uppercase rounded-xl hover:bg-cyan-700 hover:-translate-y-1 transition-all duration-300 disabled:opacity-70 disabled:hover:translate-y-0"
+                                    className="w-full group flex gap-3 items-center justify-center px-8 py-4 bg-cyan-600 dark:bg-cyan-500 aura:bg-[#D4AF37] text-white font-sans font-bold tracking-[0.2em] uppercase rounded-xl hover:bg-cyan-700 aura:hover:bg-[#B8942F] aura:bg-[#B8942F] hover:-translate-y-1 transition-all duration-300 disabled:opacity-70 disabled:hover:translate-y-0"
                                 >
                                     {status === 'loading' ? 'Enviando...' : 'Enviar Briefing Completo'}
                                     {!status && <Send className="w-5 h-5 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />}

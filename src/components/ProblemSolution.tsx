@@ -14,7 +14,7 @@ export default function ProblemSolution() {
                     className="flex flex-col items-start"
                 >
                     <h2 className="text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl font-serif text-slate-900 dark:text-white mb-6 md:mb-10 leading-[1.1] md:leading-[1.05] tracking-tight">
-                        Muitos negócios oferecem serviços excelentes, mas possuem uma presença que <span className="italic text-cyan-600 dark:text-cyan-400 font-light">não transmite sua verdadeira autoridade.</span>
+                        Muitos negócios oferecem serviços excelentes, mas possuem uma presença que <span className="italic text-cyan-600 dark:text-cyan-400 aura:text-[#FBBF24] font-light">não transmite sua verdadeira autoridade.</span>
                     </h2>
 
                     <p className="text-slate-600 dark:text-zinc-400 font-sans text-base sm:text-lg md:text-xl md:text-2xl font-light leading-relaxed mb-8 tracking-wide">
@@ -30,9 +30,9 @@ export default function ProblemSolution() {
                     transition={{ duration: 0.4, delay: 0.1 }}
                     className="relative"
                 >
-                    <div className="absolute -inset-4 bg-cyan-900/10 dark:bg-cyan-500/10 blur-2xl rounded-3xl -z-10" />
-                    <div className="glass p-8 md:p-14 rounded-3xl border border-cyan-800/10 dark:border-cyan-500/20 flex flex-col gap-6 text-center md:text-left">
-                        <div className="w-16 h-16 rounded-2xl bg-cyan-600/10 text-cyan-600 dark:text-cyan-400 flex items-center justify-center mb-2 mx-auto md:mx-0 shadow-[0_0_20px_rgba(8,145,178,0.2)]">
+                    <div className="absolute -inset-4 bg-cyan-900/10 dark:bg-cyan-500 aura:bg-[#D4AF37]/10 blur-2xl rounded-3xl -z-10" />
+                    <div className="glass p-8 md:p-14 rounded-3xl border border-cyan-800/10 dark:border-cyan-500/20 aura:border-[#FBBF24]/20 flex flex-col gap-6 text-center md:text-left">
+                        <div className="w-16 h-16 rounded-2xl bg-cyan-600/10 text-cyan-600 dark:text-cyan-400 aura:text-[#FBBF24] flex items-center justify-center mb-2 mx-auto md:mx-0 shadow-[0_0_20px_rgba(8,145,178,0.2)]">
                             <span className="text-2xl font-serif italic">W</span>
                         </div>
                         <h3 className="text-2xl md:text-3xl font-serif text-slate-900 dark:text-white leading-tight">
