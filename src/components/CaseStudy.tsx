@@ -47,7 +47,7 @@ export default function CaseStudy() {
                         Design e desenvolvimento focado em transmitir autoridade odontológica e maximizar a captação de pacientes de alto ticket através de uma interface ágil.
                     </p>
                     <a
-                        href="https://aura-odonto-demo-site.vercel.app/"
+                        href="https://aura-odontologia-premium.vercel.app/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group flex gap-2 md:gap-3 items-center justify-center px-8 md:px-10 py-4 md:py-5 border border-cyan-400 dark:border-cyan-500 aura:border-amber-500 ruby:border-rose-500 text-cyan-700 dark:text-cyan-400 aura:text-amber-600 dark:aura:text-amber-400 ruby:text-rose-600 dark:ruby:text-rose-400 rounded-full font-sans font-bold uppercase tracking-[0.2em] text-xs md:text-sm hover:bg-cyan-600 aura:hover:bg-amber-600 ruby:hover:bg-rose-700 hover:text-white aura:hover:text-white ruby:hover:text-white dark:hover:bg-cyan-500 dark:hover:text-[#030712] dark:aura:hover:bg-amber-500 dark:aura:hover:text-[#09090B] dark:ruby:hover:bg-rose-600 dark:ruby:hover:text-white transition-all duration-300 shadow-xl hover:shadow-[0_20px_40px_-15px_rgba(8,145,178,0.4)] hover:-translate-y-1 w-full sm:w-auto text-center"

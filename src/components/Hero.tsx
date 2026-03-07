@@ -41,11 +41,11 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
                             }}
                             className="w-32 h-32 md:w-48 md:h-48 mb-8 md:mb-12 flex-shrink-0 relative flex flex-col items-center justify-center mx-auto group cursor-default"
                         >
-                            {/* Luz Animada de Fundo Dinâmica (Conforme Tema) */}
-                            <div className="absolute inset-0 rounded-full animate-pulseGlow bg-cyan-400/40 dark:bg-cyan-500/20 aura:bg-amber-500/40 ruby:bg-rose-600/40 blur-[30px] md:blur-[40px] z-0 transition-colors duration-500" />
+                            {/* Luz Animada de Fundo Dinâmica (Conforme Tema) - Emanando de traz */}
+                            <div className="absolute -inset-6 md:-inset-10 rounded-full animate-pulseGlow bg-cyan-400/40 dark:bg-cyan-500/40 aura:bg-amber-500/50 ruby:bg-rose-600/50 blur-[30px] md:blur-[50px] z-0 transition-colors duration-500 pointer-events-none" />
 
                             {/* Vidro do Emblema */}
-                            <div className="absolute inset-0 rounded-full border border-cyan-300/40 dark:border-white/20 aura:border-white/20 ruby:border-white/20 bg-gradient-to-br from-white/80 to-white/20 dark:from-white/10 dark:to-white/5 aura:from-white/10 ruby:from-white/10 backdrop-blur-xl shadow-[0_0_40px_rgba(0,0,0,0.1)] dark:shadow-[0_0_40px_rgba(0,0,0,0.5)] aura:shadow-[0_0_40px_rgba(245,158,11,0.2)] ruby:shadow-[0_0_40px_rgba(225,29,72,0.2)] z-10" />
+                            <div className="absolute inset-0 rounded-full border border-cyan-300/40 dark:border-white/10 aura:border-white/10 ruby:border-white/10 bg-gradient-to-br from-white/80 to-white/20 dark:from-white/10 dark:to-white/5 aura:from-black/40 aura:to-black/20 ruby:from-black/40 ruby:to-black/20 backdrop-blur-xl shadow-[0_0_40px_rgba(0,0,0,0.1)] dark:shadow-[inset_0_0_20px_rgba(255,255,255,0.05)] aura:shadow-[inset_0_0_20px_rgba(255,255,255,0.02)] ruby:shadow-[inset_0_0_20px_rgba(255,255,255,0.02)] z-10" />
 
                             {/* Anéis Internos Giratórios */}
                             <div className="absolute inset-2 md:inset-3 rounded-full border border-cyan-400/30 dark:border-white/10 aura:border-amber-500/30 ruby:border-rose-500/30 border-dashed animate-[spin_30s_linear_infinite] z-20" />
