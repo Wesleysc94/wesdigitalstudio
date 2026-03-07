@@ -47,7 +47,7 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
                             <div className="absolute inset-[2px] md:inset-[3px] rounded-full border border-cyan-400/10 dark:border-white/10 aura:border-amber-500/20 ruby:border-rose-500/20 z-10 pointer-events-none" />
 
                             {/* Anel Interno Tracejado Suave (Animação Loop Contínua) */}
-                            <div className="absolute inset-3 md:inset-4 rounded-full border border-cyan-400/20 dark:border-white/10 aura:border-amber-500/20 ruby:border-rose-500/20 border-dashed opacity-50 z-20 pointer-events-none animate-[spin_30s_linear_infinite]" />
+                            <div className="absolute inset-3 md:inset-4 rounded-full border border-cyan-700/40 dark:border-cyan-400/40 aura:border-amber-500/40 ruby:border-rose-500/40 border-dashed z-20 pointer-events-none animate-[spin_30s_linear_infinite]" />
 
                             {/* Glow muito sutil interno para destacar o W */}
                             <div className="absolute inset-0 rounded-full bg-cyan-100/10 dark:bg-white/5 aura:bg-amber-100/5 ruby:bg-rose-100/5 blur-md z-10 pointer-events-none" />
