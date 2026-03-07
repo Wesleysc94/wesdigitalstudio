@@ -12,8 +12,8 @@ import { useState } from 'react';
 
 // Divisor premium com GLOW para criar transição suave ("degradê") entre seções
 const Divider = () => (
-    <div className="w-full max-w-6xl mx-auto h-px bg-gradient-to-r from-transparent via-cyan-900/40 dark:via-cyan-600/60 to-transparent relative opacity-60">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/4 h-[2px] bg-gradient-to-r from-transparent via-cyan-400/40 dark:via-cyan-400/30 to-transparent blur-[2px]" />
+    <div className="w-full max-w-6xl mx-auto h-px bg-gradient-to-r from-transparent via-cyan-900/40 dark:via-cyan-600/60 aura:via-amber-600/60 ruby:via-rose-600/60 to-transparent relative opacity-60 transition-colors duration-500">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1/4 h-[2px] bg-gradient-to-r from-transparent via-cyan-400/40 dark:via-cyan-400/30 aura:via-amber-400/30 ruby:via-rose-400/30 to-transparent blur-[2px] transition-colors duration-500" />
     </div>
 );
 
