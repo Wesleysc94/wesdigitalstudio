@@ -36,10 +36,10 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
 
                         {/* --- EMBLEMA W PREMIUM (ESTÁTICO & SOFISTICADO) --- */}
                         <motion.div
-                            className="w-28 h-28 md:w-[13.5rem] md:h-[13.5rem] mb-6 md:mb-12 flex-shrink-0 relative flex flex-col items-center justify-center mx-auto group cursor-default"
+                            className="w-36 h-36 md:w-[13.5rem] md:h-[13.5rem] mb-6 md:mb-12 flex-shrink-0 relative flex flex-col items-center justify-center mx-auto group cursor-default"
                         >
                             {/* Halo Radial Suave (Mistura Estética no Fundo) */}
-                            <div className="absolute -inset-4 md:-inset-16 rounded-full bg-cyan-400/20 dark:bg-cyan-500/10 aura:bg-amber-500/15 ruby:bg-rose-600/15 blur-[40px] md:blur-[80px] z-0 transition-colors duration-500 pointer-events-none opacity-80" />
+                            <div className="absolute -inset-10 md:-inset-16 rounded-full bg-cyan-400/20 dark:bg-cyan-500/10 aura:bg-amber-500/15 ruby:bg-rose-600/15 blur-[50px] md:blur-[80px] z-0 transition-colors duration-500 pointer-events-none opacity-80" />
 
                             {/* Vidro do Emblema (Camada Base Suave, sem bordas fortes) */}
                             <div className="absolute inset-0 rounded-full border border-cyan-200/20 dark:border-white/5 aura:border-white/5 ruby:border-white/5 bg-gradient-to-br from-white/60 to-white/10 dark:from-white/5 dark:to-transparent aura:from-amber-100/5 aura:to-transparent ruby:from-rose-100/5 ruby:to-transparent backdrop-blur-2xl shadow-[0_20px_40px_-10px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.4)] aura:shadow-[0_20px_40px_-10px_rgba(245,158,11,0.1)] ruby:shadow-[0_20px_40px_-10px_rgba(225,29,72,0.1)] z-10 box-border" />
@@ -63,7 +63,7 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
                             <div className="absolute inset-0 rounded-full bg-cyan-100/10 dark:bg-white/5 aura:bg-amber-100/5 ruby:bg-rose-100/5 blur-md z-10 pointer-events-none" />
 
                             {/* A Letra W */}
-                            <span className="font-serif text-[4.2rem] md:text-[6.5rem] text-slate-800 dark:text-zinc-100 aura:text-zinc-100 ruby:text-zinc-100 italic relative z-30 transition-transform duration-500 group-hover:scale-105 drop-shadow-sm font-light">
+                            <span className="font-serif text-[3.2rem] md:text-[6.5rem] pr-2 md:pr-4 text-slate-800 dark:text-zinc-100 aura:text-zinc-100 ruby:text-zinc-100 italic relative z-30 transition-transform duration-500 group-hover:scale-105 drop-shadow-sm font-light">
                                 W
                             </span>
                         </motion.div>
