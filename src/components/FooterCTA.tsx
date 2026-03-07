@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function FooterCTA() {
     return (
-        <footer className="relative mt-20 py-32 px-6 overflow-hidden bg-slate-50 border-t border-slate-100 dark:bg-black dark:border-zinc-900/50">
+        <footer className="relative mt-20 py-32 px-6 overflow-hidden">
             {/* Background Section-Specific */}
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[80vw] h-[80vw] max-w-[600px] max-h-[600px] bg-cyan-600/10 dark:bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
 
@@ -33,7 +33,7 @@ export default function FooterCTA() {
 
                     <a
                         href="https://wa.me/5511999999999" target="_blank" rel="noreferrer"
-                        className="group flex gap-3 items-center justify-center px-8 py-4 border border-slate-700 bg-transparent text-slate-700 dark:text-slate-300 font-sans font-bold text-sm tracking-widest uppercase rounded-full hover:bg-slate-100 dark:hover:bg-zinc-900 hover:-translate-y-1 transition-all duration-300"
+                        className="group flex gap-3 items-center justify-center px-8 py-4 border border-slate-300 dark:border-slate-800 bg-white/50 dark:bg-transparent text-slate-700 dark:text-slate-300 font-sans font-bold text-sm tracking-widest uppercase rounded-full hover:bg-slate-100 dark:hover:bg-zinc-900 hover:-translate-y-1 transition-all duration-300"
                     >
                         <FileText className="w-5 h-5" />
                         Solicitar Proposta

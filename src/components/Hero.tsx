@@ -17,17 +17,17 @@ export default function Hero() {
     };
 
     return (
-        <section className="relative min-h-[100vh] flex flex-col items-center justify-center px-6 overflow-hidden bg-gradient-to-br from-slate-900 via-[#0A0F1C] to-black dark:from-[#030712] dark:via-black dark:to-[#050B14]">
+        <section className="relative min-h-[100vh] flex flex-col items-center justify-center px-6 overflow-hidden">
 
             {/* Grid Tecnológico */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)] pointer-events-none -z-10" />
 
             {/* Iluminação suave em Azul/Ciano */}
             <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: [0.4, 0.6, 0.4], scale: [1, 1.05, 1] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/4 w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] bg-cyan-600/20 dark:bg-cyan-500/15 rounded-full blur-[120px] pointer-events-none"
+                className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/4 w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] bg-cyan-400/20 dark:bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none z-0"
             />
 
             <div className="z-10 relative max-w-7xl mx-auto mt-20 md:mt-0 w-full">
@@ -41,14 +41,14 @@ export default function Hero() {
                     <div className="flex flex-col items-start text-left">
                         <motion.h1
                             variants={itemVariants}
-                            className="text-4xl md:text-5xl lg:text-7xl font-serif text-white mb-6 tracking-tight leading-tight md:leading-[1.1]"
+                            className="text-4xl md:text-5xl lg:text-7xl font-serif text-slate-900 dark:text-white mb-6 tracking-tight leading-tight md:leading-[1.1]"
                         >
-                            Experiências digitais que transformam visitantes em <span className="text-cyan-400 italic">clientes.</span>
+                            Experiências digitais que transformam visitantes em <span className="text-cyan-600 dark:text-cyan-400 italic">clientes.</span>
                         </motion.h1>
 
                         <motion.p
                             variants={itemVariants}
-                            className="text-lg md:text-xl text-slate-300 dark:text-zinc-400 font-sans max-w-xl mb-12 font-light leading-relaxed"
+                            className="text-lg md:text-xl text-slate-600 dark:text-zinc-400 font-sans max-w-xl mb-12 font-light leading-relaxed"
                         >
                             Websites e landing pages modernas criadas para empresas que desejam transmitir autoridade, gerar confiança e atrair novos contatos pela internet.
                         </motion.p>
@@ -65,7 +65,7 @@ export default function Hero() {
 
                             <a
                                 href="https://wa.me/5511999999999" target="_blank" rel="noreferrer"
-                                className="group flex gap-3 items-center justify-center px-8 py-4 border border-slate-700 bg-black/20 backdrop-blur-sm text-slate-300 font-sans font-bold text-sm tracking-widest uppercase rounded-full hover:bg-slate-800 hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto"
+                                className="group flex gap-3 items-center justify-center px-8 py-4 border border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-black/20 backdrop-blur-sm text-slate-700 dark:text-slate-300 font-sans font-bold text-sm tracking-widest uppercase rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto"
                             >
                                 Solicitar proposta
                                 <MessageCircle className="w-5 h-5" />
@@ -73,13 +73,13 @@ export default function Hero() {
                         </motion.div>
 
                         {/* Micro-prova social */}
-                        <motion.div variants={itemVariants} className="flex flex-col md:flex-row gap-4 md:gap-6 text-sm text-slate-400 font-sans mt-4">
+                        <motion.div variants={itemVariants} className="flex flex-col md:flex-row gap-4 md:gap-6 text-sm text-slate-500 dark:text-slate-400 font-sans mt-4">
                             <div className="flex items-center gap-2">
-                                <Check className="w-4 h-4 text-cyan-400 flex-shrink-0" />
+                                <Check className="w-4 h-4 text-cyan-500 dark:text-cyan-400 flex-shrink-0" />
                                 <span>Sites rápidos e modernos</span>
                             </div>
                             <div className="flex items-center gap-2">
-                                <Check className="w-4 h-4 text-cyan-400 flex-shrink-0" />
+                                <Check className="w-4 h-4 text-cyan-500 dark:text-cyan-400 flex-shrink-0" />
                                 <span>Focados em conversão</span>
                             </div>
                         </motion.div>

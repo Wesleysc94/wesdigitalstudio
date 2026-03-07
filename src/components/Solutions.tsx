@@ -17,8 +17,8 @@ export default function Solutions() {
             {/* Ambient Background Base to blend with previous sections */}
             <div className="absolute inset-0 bg-transparent transition-colors duration-500" />
 
-            {/* Tech Grid Background (Subtle) */}
-            <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_100%_100%_at_50%_0%,#000_20%,transparent_100%)] pointer-events-none" />
+            {/* Tech Grid Background (Subtle) com Fade no Topo e na Base */}
+            <div className="absolute inset-0 w-full h-full bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:linear-gradient(to_bottom,transparent_0%,black_15%,black_85%,transparent_100%)] pointer-events-none" />
 
             {/* Ambient Background Lights - Extended */}
             <div className="absolute top-1/2 left-0 w-[800px] h-[800px] md:w-[1200px] md:h-[1200px] bg-cyan-600/5 dark:bg-cyan-500/10 rounded-full blur-[150px] -translate-y-1/2 -translate-x-1/2 pointer-events-none" />
