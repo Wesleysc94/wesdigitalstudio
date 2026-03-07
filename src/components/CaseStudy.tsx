@@ -2,7 +2,9 @@ import { ExternalLink } from 'lucide-react';
 import { motion, type Variants } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade } from 'swiper/modules';
+// @ts-ignore
 import 'swiper/css';
+// @ts-ignore
 import 'swiper/css/effect-fade';
 
 export default function CaseStudy() {
