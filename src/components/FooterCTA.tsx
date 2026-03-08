@@ -17,11 +17,11 @@ export default function FooterCTA({ onOpenModal }: { onOpenModal?: () => void })
                 className="max-w-4xl mx-auto flex flex-col items-center text-center z-10 relative"
             >
                 <h2 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-serif text-slate-800 dark:text-white aura:text-white ruby:text-white mb-6 md:mb-8 leading-tight ">
-                    Vamos transformar sua <span className="italic text-cyan-600 aura:text-amber-500 ruby:text-rose-600 dark:text-cyan-400 aura:text-amber-400 ruby:text-rose-400 block mt-2">presença digital.</span>
+                    Cada projeto é <span className="italic text-cyan-600 aura:text-amber-500 ruby:text-rose-600 dark:text-cyan-400 aura:text-amber-400 ruby:text-rose-400 block mt-2">único.</span>
                 </h2>
 
                 <p className="text-slate-600 dark:text-zinc-400 aura:text-zinc-400 ruby:text-zinc-400 font-sans text-base sm:text-lg md:text-xl mb-10 md:mb-14 font-light max-w-2xl ">
-                    Se sua empresa precisa de um website profissional ou de uma landing page estratégica para campanhas, podemos ajudar a criar uma presença digital moderna e eficiente.
+                    Compartilhe sua visão e receba uma proposta sob medida para o seu negócio. Sites institucionais, landing pages ou projetos especiais — cada solução é desenhada exclusivamente para você.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 w-full sm:w-auto justify-center">
@@ -31,7 +31,7 @@ export default function FooterCTA({ onOpenModal }: { onOpenModal?: () => void })
                         className="w-full sm:w-[300px]"
                     >
                         <MessageCircle className="w-5 h-5 md:w-6 md:h-6 shrink-0 group-hover:scale-110 transition-transform duration-300" />
-                        Falar no WhatsApp
+                        Conversar no WhatsApp
                     </Button>
 
                     <Button
@@ -40,7 +40,7 @@ export default function FooterCTA({ onOpenModal }: { onOpenModal?: () => void })
                         className="w-full sm:w-[300px]"
                     >
                         <FileText className="w-5 h-5 md:w-6 md:h-6 shrink-0 group-hover:scale-110 transition-transform duration-300" />
-                        Solicitar Proposta
+                        Solicitar Orçamento
                     </Button>
                 </div>
 

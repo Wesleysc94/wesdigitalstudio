@@ -91,7 +91,7 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
 
                             <Button onClick={onOpenModal} variant="outline" className="w-full sm:w-[280px]">
                                 <MessageCircle className="w-5 h-5 md:w-6 md:h-6 shrink-0 group-hover:scale-110 transition-transform duration-300" />
-                                Solicitar proposta
+                                Solicitar Orçamento
                             </Button>
                         </motion.div>
 

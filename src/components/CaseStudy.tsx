@@ -2,7 +2,7 @@ import { ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade } from 'swiper/modules';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 // @ts-ignore
 import 'swiper/css';
 // @ts-ignore
@@ -57,25 +57,40 @@ const projects: Project[] = [
     },
 ];
 
-const PROJECT_INTERVAL = 10000;
+const PROJECT_INTERVAL = 15000;
 
 export default function CaseStudy() {
     const [activeIndex, setActiveIndex] = useState(0);
     const activeProject = projects[activeIndex];
+    const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-    /* Auto-advance project every 10s */
+    /* Centralized timer management — resets on every manual interaction */
+    const resetTimer = useCallback(() => {
+        if (timerRef.current) clearInterval(timerRef.current);
+        timerRef.current = setInterval(() => {
+            setActiveIndex((prev) => (prev + 1) % projects.length);
+        }, PROJECT_INTERVAL);
+    }, []);
+
     const goToNext = useCallback(() => {
         setActiveIndex((prev) => (prev + 1) % projects.length);
-    }, []);
+        resetTimer();
+    }, [resetTimer]);
 
     const goToPrev = useCallback(() => {
         setActiveIndex((prev) => (prev - 1 + projects.length) % projects.length);
-    }, []);
+        resetTimer();
+    }, [resetTimer]);
+
+    const goToIndex = useCallback((idx: number) => {
+        setActiveIndex(idx);
+        resetTimer();
+    }, [resetTimer]);
 
     useEffect(() => {
-        const timer = setInterval(goToNext, PROJECT_INTERVAL);
-        return () => clearInterval(timer);
-    }, [goToNext]);
+        resetTimer();
+        return () => { if (timerRef.current) clearInterval(timerRef.current); };
+    }, [resetTimer]);
 
     return (
         <section id="case-study" className="py-12 md:py-28 px-6 relative max-w-screen-2xl mx-auto !overflow-visible z-20">
@@ -122,7 +137,7 @@ export default function CaseStudy() {
                         {projects.map((project, idx) => (
                             <button
                                 key={idx}
-                                onClick={() => setActiveIndex(idx)}
+                                onClick={() => goToIndex(idx)}
                                 className={`group relative flex items-center gap-2 transition-all duration-500 ${idx === activeIndex ? 'cursor-default' : 'cursor-pointer'}`}
                                 aria-label={`Ver projeto ${project.name}`}
                             >
@@ -162,7 +177,7 @@ export default function CaseStudy() {
                                     effect="fade"
                                     fadeEffect={{ crossFade: true }}
                                     speed={1000}
-                                    autoplay={{ delay: 8000, disableOnInteraction: false }}
+                                    autoplay={{ delay: 4000, disableOnInteraction: false }}
                                     loop={true}
                                     allowTouchMove={false}
                                     className="w-full h-full"

@@ -6,6 +6,7 @@ import Solutions from './components/Solutions';
 import CaseStudy from './components/CaseStudy';
 import WorkProcess from './components/WorkProcess';
 import AboutStudio from './components/AboutStudio';
+import FAQ from './components/FAQ';
 import FooterCTA from './components/FooterCTA';
 import LeadFormModal from './components/LeadFormModal';
 import BackToTop from './components/BackToTop';
@@ -75,6 +76,9 @@ function App() {
                 <Divider />
 
                 <AboutStudio />
+                <Divider />
+
+                <FAQ />
             </main>
 
             <FooterCTA onOpenModal={() => setIsLeadModalOpen(true)} />
