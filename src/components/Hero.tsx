@@ -1,7 +1,6 @@
 import { MessageCircle, ArrowRight } from 'lucide-react';
 import { motion, type Variants } from 'framer-motion';
 import Button from './Button';
-import InstagramButton from './InstagramButton';
 
 export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
 
@@ -96,9 +95,6 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
                             </Button>
                         </motion.div>
 
-                        <motion.div variants={itemVariants} className="flex justify-center w-full mb-8 md:mb-16">
-                            <InstagramButton variant="footer" />
-                        </motion.div>
 
                         {/* Mobile-only Preview Image (Renders below CTAs) */}
                         <motion.div variants={itemVariants} className="flex lg:hidden relative w-full justify-center items-center pointer-events-none mt-8">
