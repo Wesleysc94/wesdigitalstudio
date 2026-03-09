@@ -50,6 +50,13 @@ ${projectDetails}
             const data = await response.json();
 
             if (data.success) {
+                // Fire-and-forget: create Lead in OS Dashboard automatically
+                fetch("https://wes-digital-studio-os.vercel.app/api/os/portfolio-intake", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ name, email, phone, budget, details: projectDetails }),
+                }).catch(() => { /* OS dashboard integration is best-effort, never block user */ });
+
                 const wppMessage = `Olá Wes Digital! Meu nome é ${name}. Finalizei o preenchimento do formulário no site.
 Email para retorno: ${email}
 Telefone registrado: ${phone || 'Não informado'}
