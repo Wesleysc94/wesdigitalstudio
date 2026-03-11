@@ -1,9 +1,11 @@
 import ThemeToggle from './components/ThemeToggle';
+import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Positioning from './components/Positioning';
 import ProblemSolution from './components/ProblemSolution';
 import Solutions from './components/Solutions';
 import CaseStudy from './components/CaseStudy';
+import TechStack from './components/TechStack';
 import WorkProcess from './components/WorkProcess';
 import AboutStudio from './components/AboutStudio';
 import FAQ from './components/FAQ';
@@ -57,6 +59,8 @@ function App() {
                 </div>
             </div>
 
+            <Navbar onOpenModal={() => setIsLeadModalOpen(true)} />
+
             <main className="relative z-10">
                 <Hero onOpenModal={() => setIsLeadModalOpen(true)} />
 
@@ -67,6 +71,9 @@ function App() {
                 <Divider />
 
                 <Solutions />
+                <Divider />
+
+                <TechStack />
                 <Divider />
 
                 <CaseStudy />

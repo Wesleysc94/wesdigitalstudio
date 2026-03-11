@@ -1,8 +1,7 @@
 import { ExternalLink } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade } from 'swiper/modules';
-import { useState, useEffect, useCallback, useRef } from 'react';
 // @ts-ignore
 import 'swiper/css';
 // @ts-ignore
@@ -19,203 +18,196 @@ interface Project {
 const projects: Project[] = [
     {
         name: "Aura Odonto",
-        subtitle: "Odontologia Estética Premium",
-        description: "Design e desenvolvimento focado em transmitir autoridade odontológica e maximizar a captação de pacientes de alto ticket através de uma interface ágil e visualmente impecável.",
+        subtitle: "Clínica Odontológica · Website Institucional",
+        description: "Design focado em transmitir autoridade odontológica e maximizar a captação de pacientes de alto ticket.",
         url: "https://aura-odontologia-premium.vercel.app/",
         images: [
-            "/mockups/versao azul desktop e mobile.PNG",
-            "/mockups/versao dark mobil e desktop.PNG",
-            "/mockups/versao desktopa azul.PNG",
-            "/mockups/versao dark desktop.PNG",
-            "/mockups/versao azul mobile.PNG",
+            "/mockups/versao azul desktop e mobile.webp",
+            "/mockups/versao dark mobil e desktop.webp",
+            "/mockups/versao desktopa azul.webp",
+            "/mockups/versao dark desktop.webp",
+            "/mockups/versao azul mobile.webp",
         ],
     },
     {
-        name: "Advocacia Premium",
+        name: "Aura Vet",
+        subtitle: "Clínica Veterinária · Website Institucional",
+        description: "Medicina veterinária de precisão com design sofisticado e experiência acolhedora para tutores exigentes.",
+        url: "https://veterinaria-premium-demo.vercel.app/",
+        images: [
+            "/mockups/vet-hero.webp",
+            "/mockups/vet-middle.webp",
+            "/mockups/vet-bottom.webp",
+        ],
+    },
+    {
+        name: "Maison Aura",
+        subtitle: "Estética Facial · Website Institucional",
+        description: "Estética facial premium com interface que transmite luxo, precisão clínica e confiança instantânea.",
+        url: "https://maison-aura-estetica-premium-demo.vercel.app/",
+        images: [
+            "/mockups/maison-hero.webp",
+            "/mockups/maison-middle.webp",
+            "/mockups/maison-bottom.webp",
+        ],
+    },
+    {
+        name: "Advocacia Clássica",
         subtitle: "Escritório Jurídico · Website Institucional",
-        description: "Interface institucional sofisticada para escritório de advocacia, projetada para comunicar credibilidade jurídica e converter visitantes em consultas agendadas com alto ticket médio.",
+        description: "Interface sofisticada para escritório de advocacia, projetada para comunicar credibilidade e autoridade jurídica.",
         url: "https://advocacia-premium-v1.vercel.app/",
         images: [
-            "/mockups/adv-v1-hero-dark.png",
-            "/mockups/adv-v1-sobre.png",
-            "/mockups/adv-v1-atuacao.png",
-            "/mockups/adv-v1-contato.png",
-            "/mockups/adv-v1-hero-light.png",
+            "/mockups/adv-v1-hero-dark.webp",
+            "/mockups/adv-v1-sobre.webp",
+            "/mockups/adv-v1-atuacao.webp",
+            "/mockups/adv-v1-contato.webp",
+            "/mockups/adv-v1-hero-light.webp",
         ],
     },
     {
-        name: "Advocacia Premium",
-        subtitle: "Versão Executiva · Landing Page",
-        description: "Landing page estratégica de alta conversão para captação de leads jurídicos, com formulário inteligente, prova social e estrutura persuasiva voltada para empresários e profissionais.",
+        name: "Advocacia Executiva",
+        subtitle: "Assessoria Jurídica · Website Institucional",
+        description: "Website institucional com estrutura persuasiva e formulário inteligente para captação de clientes empresariais.",
         url: "https://advocacia-premium-v2.vercel.app/",
         images: [
-            "/mockups/adv-v2-hero.png",
-            "/mockups/adv-v2-sobre.png",
-            "/mockups/adv-v2-areas.png",
-            "/mockups/adv-v2-contato.png",
+            "/mockups/adv-v2-hero.webp",
+            "/mockups/adv-v2-sobre.webp",
+            "/mockups/adv-v2-areas.webp",
+            "/mockups/adv-v2-contato.webp",
         ],
     },
 ];
 
-const PROJECT_INTERVAL = 15000;
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+    },
+};
+
+const cardVariants = {
+    hidden: { opacity: 0, y: 50, scale: 0.92, filter: "blur(12px)" },
+    visible: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        filter: "blur(0px)",
+        transition: { duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] as const },
+    },
+};
+
+function ProjectCard({ project }: { project: Project }) {
+    return (
+        <motion.div
+            variants={cardVariants}
+            className="group relative flex flex-col rounded-[2rem] overflow-hidden border border-slate-200/60 dark:border-white/8 aura:border-white/8 ruby:border-white/8 bg-white dark:bg-zinc-900/80 aura:bg-[#0a0a0a]/90 ruby:bg-[#0a0a0a]/90 shadow-[0_8px_30px_-10px_rgba(0,0,0,0.08)] dark:shadow-[0_8px_30px_-10px_rgba(0,0,0,0.4)] hover:shadow-[0_20px_50px_-15px_rgba(8,145,178,0.2)] dark:hover:shadow-[0_20px_50px_-15px_rgba(0,0,0,0.6)] aura:hover:shadow-[0_20px_50px_-15px_rgba(245,158,11,0.15)] ruby:hover:shadow-[0_20px_50px_-15px_rgba(225,29,72,0.15)] transition-all duration-500 hover:-translate-y-2"
+        >
+            {/* Image Slideshow Area */}
+            <div className="relative w-full aspect-[16/10] overflow-hidden bg-slate-100 dark:bg-zinc-800/50 aura:bg-zinc-800/50 ruby:bg-zinc-800/50">
+                <Swiper
+                    modules={[Autoplay, EffectFade]}
+                    effect="fade"
+                    fadeEffect={{ crossFade: true }}
+                    speed={1200}
+                    autoplay={{ delay: 3500, disableOnInteraction: false }}
+                    loop={true}
+                    allowTouchMove={false}
+                    className="w-full h-full"
+                >
+                    {project.images.map((img, idx) => (
+                        <SwiperSlide key={idx} className="w-full h-full">
+                            <img
+                                src={img}
+                                alt={`${project.name} — ${project.subtitle} — Screenshot ${idx + 1}`}
+                                loading="lazy"
+                                className="w-full h-full object-cover object-top"
+                            />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+
+                {/* Hover Overlay with gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 flex items-end p-6">
+                    <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-5 py-2.5 bg-white/95 dark:bg-white/90 text-slate-900 rounded-full text-sm font-sans font-semibold tracking-wide hover:bg-white transition-all duration-300 shadow-lg hover:scale-105 active:scale-95"
+                    >
+                        Ver Projeto
+                        <ExternalLink className="w-4 h-4" />
+                    </a>
+                </div>
+
+                {/* Subtle top gradient for text readability */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-transparent pointer-events-none z-[5]" />
+            </div>
+
+            {/* Card Content */}
+            <div className="flex flex-col gap-2 p-6 md:p-7 flex-1">
+                <div className="flex items-start justify-between gap-3">
+                    <div className="flex-1 min-w-0">
+                        <h3 className="text-lg md:text-xl font-serif font-semibold text-slate-900 dark:text-white aura:text-white ruby:text-white tracking-tight leading-tight truncate">
+                            {project.name}
+                        </h3>
+                        <span className="text-cyan-600 aura:text-amber-500 ruby:text-rose-600 dark:text-cyan-400 aura:text-amber-400 ruby:text-rose-400 font-sans font-medium text-xs tracking-wide uppercase mt-1 block">
+                            {project.subtitle}
+                        </span>
+                    </div>
+                    <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-shrink-0 w-9 h-9 rounded-full border border-slate-200 dark:border-zinc-700 aura:border-amber-500/30 ruby:border-rose-500/30 flex items-center justify-center text-slate-500 dark:text-zinc-400 hover:text-cyan-600 dark:hover:text-cyan-400 aura:hover:text-amber-500 ruby:hover:text-rose-500 hover:border-cyan-500 dark:hover:border-cyan-500 aura:hover:border-amber-500 ruby:hover:border-rose-500 transition-all duration-300 hover:-translate-y-0.5"
+                        aria-label={`Visitar ${project.name}`}
+                    >
+                        <ExternalLink className="w-4 h-4" />
+                    </a>
+                </div>
+                <p className="text-slate-500 dark:text-zinc-400 aura:text-zinc-400 ruby:text-zinc-400 font-sans text-sm font-light leading-relaxed tracking-wide mt-1">
+                    {project.description}
+                </p>
+            </div>
+        </motion.div>
+    );
+}
 
 export default function CaseStudy() {
-    const [activeIndex, setActiveIndex] = useState(0);
-    const activeProject = projects[activeIndex];
-    const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
-
-    /* Centralized timer management — resets on every manual interaction */
-    const resetTimer = useCallback(() => {
-        if (timerRef.current) clearInterval(timerRef.current);
-        timerRef.current = setInterval(() => {
-            setActiveIndex((prev) => (prev + 1) % projects.length);
-        }, PROJECT_INTERVAL);
-    }, []);
-
-    const goToNext = useCallback(() => {
-        setActiveIndex((prev) => (prev + 1) % projects.length);
-        resetTimer();
-    }, [resetTimer]);
-
-    const goToPrev = useCallback(() => {
-        setActiveIndex((prev) => (prev - 1 + projects.length) % projects.length);
-        resetTimer();
-    }, [resetTimer]);
-
-    const goToIndex = useCallback((idx: number) => {
-        setActiveIndex(idx);
-        resetTimer();
-    }, [resetTimer]);
-
-    useEffect(() => {
-        resetTimer();
-        return () => { if (timerRef.current) clearInterval(timerRef.current); };
-    }, [resetTimer]);
-
     return (
-        <section id="case-study" className="py-12 md:py-28 px-6 relative max-w-screen-2xl mx-auto !overflow-visible z-20">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-32 items-center !overflow-visible">
+        <section id="case-study" className="py-16 md:py-28 px-6 relative max-w-screen-2xl mx-auto z-20">
 
-                {/* Left Column: Project Info */}
-                <div className="flex flex-col items-start z-10 w-full min-h-[380px] md:min-h-[480px]">
-                    <span className="text-cyan-600 aura:text-amber-500 ruby:text-rose-600 dark:text-cyan-400 aura:text-amber-400 ruby:text-rose-400 font-sans font-bold tracking-[0.2em] uppercase text-xs md:text-sm mb-6 block">
-                        Projetos Demonstrativos
-                    </span>
+            {/* Section Header */}
+            <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "0px" }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="text-center mb-16 md:mb-24"
+            >
+                <span className="text-cyan-600 aura:text-amber-500 ruby:text-rose-600 dark:text-cyan-400 aura:text-amber-400 ruby:text-rose-400 font-sans font-bold tracking-[0.2em] uppercase text-xs md:text-sm mb-6 block">
+                    Projetos Demonstrativos
+                </span>
+                <h2 className="text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl font-serif text-slate-900 dark:text-white aura:text-white ruby:text-white leading-[1.15] md:leading-[1.1] tracking-tight mb-6">
+                    Nosso <span className="italic text-cyan-600 aura:text-amber-500 ruby:text-rose-600 dark:text-cyan-400 aura:text-amber-400 ruby:text-rose-400 font-light">portfólio.</span>
+                </h2>
+                <p className="text-slate-600 dark:text-zinc-400 aura:text-zinc-400 ruby:text-zinc-400 font-sans text-lg sm:text-xl md:text-2xl font-light max-w-3xl mx-auto leading-relaxed tracking-wide">
+                    Cada projeto é um ecossistema digital único, desenhado para gerar autoridade e conversão.
+                </p>
+            </motion.div>
 
-                    <AnimatePresence mode="wait">
-                        <motion.div
-                            key={activeIndex}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -20 }}
-                            transition={{ duration: 0.5, ease: "easeOut" }}
-                            className="flex flex-col items-start w-full"
-                        >
-                            <h2 className="text-[2.5rem] sm:text-5xl md:text-[5.5rem] lg:text-[6.5rem] xl:text-[8rem] font-serif text-slate-900 dark:text-zinc-50 aura:text-slate-50 ruby:text-slate-50 mb-2 md:mb-4 leading-[1] md:leading-[0.9] tracking-tighter">
-                                <span className="italic font-light">{activeProject.name}</span>
-                            </h2>
-                            <span className="text-cyan-600 aura:text-amber-500 ruby:text-rose-600 dark:text-cyan-400 aura:text-amber-400 ruby:text-rose-400 font-sans font-medium tracking-wide text-sm md:text-base mb-6 md:mb-10 block">
-                                {activeProject.subtitle}
-                            </span>
-                            <p className="text-slate-600 dark:text-zinc-400 aura:text-zinc-400 ruby:text-zinc-400 font-sans text-sm sm:text-base md:text-xl md:text-2xl mb-8 md:mb-14 leading-relaxed font-light tracking-wide max-w-xl">
-                                {activeProject.description}
-                            </p>
-                            <a
-                                href={activeProject.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="group flex gap-2 md:gap-3 items-center justify-center px-8 md:px-10 py-4 md:py-5 border border-cyan-400 dark:border-cyan-500 aura:border-amber-500 ruby:border-rose-500 text-cyan-700 dark:text-cyan-400 aura:text-amber-600 dark:aura:text-amber-400 ruby:text-rose-600 dark:ruby:text-rose-400 rounded-full font-sans font-bold uppercase tracking-[0.2em] text-xs md:text-sm hover:bg-cyan-600 aura:hover:bg-amber-600 ruby:hover:bg-rose-700 hover:text-white aura:hover:text-white ruby:hover:text-white dark:hover:bg-cyan-500 dark:hover:text-[#030712] dark:aura:hover:bg-amber-500 dark:aura:hover:text-[#09090B] dark:ruby:hover:bg-rose-600 dark:ruby:hover:text-white transition-all duration-300 shadow-xl hover:shadow-[0_20px_40px_-15px_rgba(8,145,178,0.4)] hover:-translate-y-1 w-full sm:w-auto text-center"
-                            >
-                                Investigar projeto
-                                <ExternalLink className="w-5 h-5 md:w-6 md:h-6 shrink-0 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
-                            </a>
-                        </motion.div>
-                    </AnimatePresence>
-
-                    {/* Project Navigation Dots */}
-                    <div className="flex gap-3 mt-10 md:mt-14">
-                        {projects.map((project, idx) => (
-                            <button
-                                key={idx}
-                                onClick={() => goToIndex(idx)}
-                                className={`group relative flex items-center gap-2 transition-all duration-500 ${idx === activeIndex ? 'cursor-default' : 'cursor-pointer'}`}
-                                aria-label={`Ver projeto ${project.name}`}
-                            >
-                                <div className={`h-2 rounded-full transition-all duration-500 ${idx === activeIndex
-                                    ? 'w-10 bg-cyan-500 dark:bg-cyan-400 aura:bg-amber-500 ruby:bg-rose-500'
-                                    : 'w-2 bg-slate-300 dark:bg-zinc-700 hover:bg-slate-400 dark:hover:bg-zinc-600'
-                                    }`} />
-                            </button>
-                        ))}
-                    </div>
-                </div>
-
-                {/* Right Column: Image Carousel */}
-                <div className="relative w-full h-full flex justify-center items-center py-10 lg:pl-10 !overflow-visible">
-
-                    {/* Ambient Background Glow */}
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,theme(colors.cyan.400/0.08)_0%,transparent_60%)] dark:bg-[radial-gradient(circle_at_center,theme(colors.cyan.500/0.15)_0%,transparent_60%)] aura:bg-[radial-gradient(circle_at_center,theme(colors.amber.500/0.15)_0%,transparent_60%)] ruby:bg-[radial-gradient(circle_at_center,theme(colors.rose.600/0.15)_0%,transparent_60%)] pointer-events-none z-0" />
-
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                        whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                        viewport={{ once: true, margin: "0px" }}
-                        transition={{ duration: 0.5, ease: "easeOut" }}
-                        className="relative z-10 w-full flex flex-col items-center"
-                    >
-                        <AnimatePresence mode="wait">
-                            <motion.div
-                                key={activeIndex}
-                                initial={{ opacity: 0, scale: 0.95 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.95 }}
-                                transition={{ duration: 0.6, ease: "easeOut" }}
-                                className="relative w-full aspect-video flex items-center justify-center"
-                            >
-                                <Swiper
-                                    modules={[Autoplay, EffectFade]}
-                                    effect="fade"
-                                    fadeEffect={{ crossFade: true }}
-                                    speed={1000}
-                                    autoplay={{ delay: 4000, disableOnInteraction: false }}
-                                    loop={true}
-                                    allowTouchMove={false}
-                                    className="w-full h-full"
-                                >
-                                    {activeProject.images.map((img, idx) => (
-                                        <SwiperSlide key={idx} className="w-full h-full flex items-center justify-center bg-transparent">
-                                            <img
-                                                src={img}
-                                                alt={`${activeProject.name} — ${activeProject.subtitle} — Showcase ${idx + 1}`}
-                                                loading="lazy"
-                                                className="w-full h-full object-contain [mask-image:radial-gradient(ellipse_at_center,black_65%,transparent_100%)]"
-                                            />
-                                        </SwiperSlide>
-                                    ))}
-                                </Swiper>
-                            </motion.div>
-                        </AnimatePresence>
-
-                        {/* Project Navigation Arrows (prev/next switch PROJECTS) */}
-                        <div className="flex gap-4 items-center justify-center mt-8">
-                            <button
-                                onClick={goToPrev}
-                                className="group flex items-center justify-center w-12 h-12 rounded-full border border-slate-300 dark:border-zinc-700 aura:border-amber-500/30 ruby:border-rose-500/30 bg-transparent text-slate-600 dark:text-zinc-400 aura:text-amber-400 ruby:text-rose-400 hover:text-cyan-600 aura:hover:text-amber-500 ruby:hover:text-rose-600 dark:hover:text-cyan-400 hover:border-cyan-500 aura:hover:border-amber-500 ruby:hover:border-rose-500 transition-all duration-300"
-                                aria-label="Projeto anterior"
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:-translate-x-1 transition-transform"><path d="m15 18-6-6 6-6" /></svg>
-                            </button>
-                            <button
-                                onClick={goToNext}
-                                className="group flex items-center justify-center w-12 h-12 rounded-full border border-slate-300 dark:border-zinc-700 aura:border-amber-500/30 ruby:border-rose-500/30 bg-transparent text-slate-600 dark:text-zinc-400 aura:text-amber-400 ruby:text-rose-400 hover:text-cyan-600 aura:hover:text-amber-500 ruby:hover:text-rose-600 dark:hover:text-cyan-400 hover:border-cyan-500 aura:hover:border-amber-500 ruby:hover:border-rose-500 transition-all duration-300"
-                                aria-label="Próximo projeto"
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-1 transition-transform"><path d="m9 18 6-6-6-6" /></svg>
-                            </button>
-                        </div>
-                    </motion.div>
-                </div>
-            </div>
+            {/* Project Gallery Grid */}
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px" }}
+                variants={containerVariants}
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+            >
+                {projects.map((project, idx) => (
+                    <ProjectCard key={idx} project={project} />
+                ))}
+            </motion.div>
         </section>
     );
 }

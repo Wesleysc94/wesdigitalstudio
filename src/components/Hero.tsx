@@ -99,7 +99,7 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
                         {/* Mobile-only Preview Image (Renders below CTAs) */}
                         <motion.div variants={itemVariants} className="flex lg:hidden relative w-full justify-center items-center pointer-events-none mt-8">
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-cyan-400/5 dark:bg-cyan-500/5 aura:bg-amber-500/5 ruby:bg-rose-600/5 rounded-full blur-[60px] opacity-30 z-0" />
-                            <img src="/mockups/dupla versao mobile.PNG" alt="Mobile UI Desktop" loading="lazy" className="relative z-30 w-full max-w-[340px] rounded-[2rem] shadow-xl border-[3px] border-white/30 dark:border-white/10 aura:border-white/10 ruby:border-white/10 opacity-90" />
+                            <img src="/mockups/dupla versao mobile.webp" alt="Mobile UI Desktop" loading="lazy" className="relative z-30 w-full max-w-[340px] rounded-[2rem] shadow-xl border-[3px] border-white/30 dark:border-white/10 aura:border-white/10 ruby:border-white/10 opacity-90" />
                         </motion.div>
                     </div>
 
@@ -117,7 +117,7 @@ export default function Hero({ onOpenModal }: { onOpenModal?: () => void }) {
                             <motion.img
                                 animate={{ y: [0, -20, 0] }}
                                 transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                                src="/mockups/dupla versao mobile.PNG"
+                                src="/mockups/dupla versao mobile.webp"
                                 alt="Mobile Project Interface"
                                 className="relative z-30 w-[90%] rounded-[2rem] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.5)] border-[4px] border-white/40 dark:border-white/10 aura:border-white/10 ruby:border-white/10 "
                             />

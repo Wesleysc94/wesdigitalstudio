@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ArrowRight } from 'lucide-react';
+import Button from './Button';
 
 const faqData = [
     {
@@ -186,8 +187,8 @@ export default function FAQ() {
                     className="mt-8 md:mt-10"
                 >
                     <div className="bg-gradient-to-br from-cyan-50/80 to-white/40 dark:from-cyan-950/20 dark:to-white/[0.02] aura:from-amber-950/20 aura:to-white/[0.02] ruby:from-rose-950/20 ruby:to-white/[0.02] backdrop-blur-2xl rounded-[2rem] border border-cyan-200/40 dark:border-cyan-500/10 aura:border-amber-500/10 ruby:border-rose-500/10 px-8 py-8 md:px-10 md:py-10 shadow-[0_20px_40px_-10px_rgba(0,0,0,0.04)] dark:shadow-[0_20px_40px_-10px_rgba(0,0,0,0.3)]">
-                        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-                            <div className="max-w-2xl">
+                        <div className="flex flex-col items-center text-center gap-8">
+                            <div>
                                 <span className="text-cyan-700 dark:text-cyan-400 aura:text-amber-400 ruby:text-rose-400 font-sans font-semibold tracking-[0.16em] uppercase text-xs block mb-4">
                                     Próximo Passo
                                 </span>
@@ -199,16 +200,18 @@ export default function FAQ() {
                                 </p>
                             </div>
 
-                            <a
+                            <Button
                                 href="#footer-cta"
-                                onClick={(e) => {
+                                variant="primary"
+                                className="w-full sm:w-auto"
+                                onClick={(e: React.MouseEvent) => {
                                     e.preventDefault();
                                     document.getElementById('footer-cta')?.scrollIntoView({ behavior: 'smooth' });
                                 }}
-                                className="inline-flex items-center justify-center rounded-full px-7 py-4 min-w-[220px] bg-cyan-600 hover:bg-cyan-700 dark:bg-cyan-500 dark:hover:bg-cyan-400 aura:bg-amber-500 aura:hover:bg-amber-400 ruby:bg-rose-600 ruby:hover:bg-rose-500 text-white font-sans font-medium text-base transition-all duration-300 shadow-[0_18px_40px_-14px_rgba(8,145,178,0.5)] dark:shadow-[0_18px_40px_-14px_rgba(34,211,238,0.35)] hover:-translate-y-0.5"
                             >
                                 Solicitar análise do projeto
-                            </a>
+                                <ArrowRight className="w-5 h-5 shrink-0 group-hover:translate-x-1 transition-transform duration-300" />
+                            </Button>
                         </div>
                     </div>
                 </motion.div>
