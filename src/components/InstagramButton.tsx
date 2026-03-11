@@ -14,7 +14,7 @@ export default function InstagramButton({ className = '', variant = 'floating' }
     if (variant === 'floating') {
         return (
             <a
-                href="https://instagram.com/wesdigitalstudio"
+                href="https://instagram.com/wxdigital"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Siga no Instagram"
@@ -31,7 +31,7 @@ export default function InstagramButton({ className = '', variant = 'floating' }
     // Footer Variant
     return (
         <a
-            href="https://instagram.com/wesdigitalstudio"
+            href="https://instagram.com/wxdigital"
             target="_blank"
             rel="noopener noreferrer"
             title="Acompanhe pelo Instagram"

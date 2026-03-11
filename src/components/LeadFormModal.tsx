@@ -25,11 +25,11 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
         // Web3Forms Integration
         formData.append("access_key", "64c37e83-2114-42e1-9d47-d0d014856288");
         formData.append("subject", `Novo Briefing: ${name}`);
-        formData.append("from_name", "Wes Digital (Site)");
+        formData.append("from_name", "WX Digital (Site)");
 
         // Ensure format is friendly in email body
         formData.append("message", `
-NOVO PROJETO - WES DIGITAL
+NOVO PROJETO - WX DIGITAL
 ----------------------------------------
 Nome/Empresa: ${name}
 E-mail: ${email}
@@ -51,13 +51,13 @@ ${projectDetails}
 
             if (data.success) {
                 // Fire-and-forget: create Lead in OS Dashboard automatically
-                fetch("https://wes-digital-studio-os.vercel.app/api/os/portfolio-intake", {
+                fetch("https://wx-digital-os.vercel.app/api/os/portfolio-intake", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ name, email, phone, budget, details: projectDetails }),
                 }).catch(() => { /* OS dashboard integration is best-effort, never block user */ });
 
-                const wppMessage = `Olá Wes Digital! Meu nome é ${name}. Finalizei o preenchimento do formulário no site.
+                const wppMessage = `Olá WX Digital! Meu nome é ${name}. Finalizei o preenchimento do formulário no site.
 Email para retorno: ${email}
 Telefone registrado: ${phone || 'Não informado'}
 

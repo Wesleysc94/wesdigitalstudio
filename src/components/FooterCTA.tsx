@@ -26,7 +26,7 @@ export default function FooterCTA({ onOpenModal }: { onOpenModal?: () => void })
 
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 w-full sm:w-auto justify-center">
                     <Button
-                        href={`https://wa.me/5511930863826?text=${encodeURIComponent("Olá Wes Digital! Acessei o site e gostaria de falar sobre um projeto para minha empresa.")}`} target="_blank" rel="noreferrer"
+                        href={`https://wa.me/5511930863826?text=${encodeURIComponent("Olá WX Digital! Acessei o site e gostaria de falar sobre um projeto para minha empresa.")}`} target="_blank" rel="noreferrer"
                         variant="primary"
                         className="w-full sm:w-[300px]"
                     >
@@ -47,7 +47,7 @@ export default function FooterCTA({ onOpenModal }: { onOpenModal?: () => void })
                 <div className="mt-20 flex flex-col items-center gap-6">
                     <InstagramButton variant="footer" />
                     <div className="text-slate-500 dark:text-zinc-600 font-sans text-sm">
-                        &copy; {new Date().getFullYear()} Wes Digital Studio - Especialistas em Presença Digital
+                        &copy; {new Date().getFullYear()} WX Digital - Especialistas em Presença Digital
                     </div>
                 </div>
             </motion.div>

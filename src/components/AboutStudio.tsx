@@ -23,11 +23,11 @@ export default function AboutStudio() {
                     <motion.span
                         animate={{ opacity: [0.7, 1, 0.7] }}
                         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                        className="font-serif text-6xl md:text-8xl text-slate-900 dark:text-white aura:text-white ruby:text-white italic relative z-10"
+                        className="font-serif text-5xl md:text-7xl text-slate-900 dark:text-white aura:text-white ruby:text-white italic relative z-10 tracking-tighter"
                     >
-                        W
+                        WX
                     </motion.span>
-                    <span className="font-sans text-[10px] md:text-xs tracking-[0.4em] uppercase text-zinc-600 dark:text-zinc-400 aura:text-zinc-400 ruby:text-zinc-400 mt-4 relative z-10">Studio</span>
+                    <span className="font-sans text-[10px] md:text-xs tracking-[0.4em] uppercase text-zinc-600 dark:text-zinc-400 aura:text-zinc-400 ruby:text-zinc-400 mt-4 relative z-10">Digital</span>
                 </motion.div>
 
                 {/* Texto Sobre o Estúdio */}
@@ -39,12 +39,12 @@ export default function AboutStudio() {
                     className="flex flex-col text-center md:text-left"
                 >
                     <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif text-slate-900 dark:text-white aura:text-white ruby:text-white mb-6 md:mb-8 leading-[1.1] tracking-tight ">
-                        Sobre a <span className="italic text-cyan-600 aura:text-amber-500 ruby:text-rose-600 dark:text-cyan-400 aura:text-amber-400 ruby:text-rose-400 font-light">Wes Digital Studio</span>
+                        Sobre a <span className="italic text-cyan-600 aura:text-amber-500 ruby:text-rose-600 dark:text-cyan-400 aura:text-amber-400 ruby:text-rose-400 font-light">WX Digital</span>
                     </h2>
 
                     <div className="space-y-6 md:space-y-8 text-slate-600 dark:text-zinc-400 aura:text-zinc-400 ruby:text-zinc-400 font-sans text-lg sm:text-xl md:text-2xl font-light leading-relaxed tracking-wide ">
                         <p>
-                            A Wes Digital Studio foi criada com o objetivo de ajudar empresas a transmitir <strong className="font-semibold text-slate-800 dark:text-zinc-200 aura:text-zinc-200 ruby:text-zinc-200">autoridade absoluta</strong> na internet através de interfaces modernas, responsivas e altamente estruturadas.
+                            A WX Digital foi criada com o objetivo de ajudar empresas a transmitir <strong className="font-semibold text-slate-800 dark:text-zinc-200 aura:text-zinc-200 ruby:text-zinc-200">autoridade absoluta</strong> na internet através de interfaces modernas, responsivas e altamente estruturadas.
                         </p>
                         <p>
                             Acreditamos que um site não deve apenas existir online como um folheto, mas sim encarnar a excelência do seu negócio — arquitetando confiança instantânea e conduzindo o visitante naturalmente até a conversão.
